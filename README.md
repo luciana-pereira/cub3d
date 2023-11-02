@@ -36,7 +36,7 @@ Além de aplicar as __boas práticas de programação em C__, como __gerenciamen
 
 
 ## Estrutura do Projeto
-
+```
 cub3d/
 │
 ├── src/             # Código-fonte do jogo
@@ -65,4 +65,4 @@ cub3d/
 ├── README.md        # Documentação do projeto
 │
 └── ...
-
+```
