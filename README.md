@@ -33,3 +33,36 @@ Além de aplicar as __boas práticas de programação em C__, como __gerenciamen
 
 - #### Loop de renderização:
 - [ ] Implementar um loop que atualiza continuamente o buffer de imagem e exibir na janela.
+
+
+## Estrutura do Projeto
+
+cub3d/
+│
+├── src/             # Código-fonte do jogo
+│   ├── main.c       # Arquivo principal
+│   ├── game/        # Código do jogo em si
+│   ├── graphics/    # Código para renderização gráfica
+│   ├── input/       # Código de entrada (controles do jogador)
+│   ├── assets/      # Recursos do jogo (texturas, modelos, etc.)
+│
+├── include/         # Arquivos de cabeçalho (.h)
+│   ├── game.h
+│   ├── graphics.h
+│   ├── input.h
+│   ├── ...
+│
+├── lib/             # Bibliotecas e dependências do projeto
+│   ├── libft/    # Biblioteca Libft (ou outra biblioteca gráfica)
+│   ├── ...
+│
+├── data/            # Dados do jogo (mapas, configurações)
+│
+├── bin/             # Executável compilado
+│
+├── Makefile         # Arquivo de compilação
+│
+├── README.md        # Documentação do projeto
+│
+└── ...
+
