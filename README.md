@@ -1,4 +1,4 @@
-# cub3D 👾​
+# cub3d 👾​
 
 Este projeto consiste em um gráfico 3D “realista” que contem a representação do interior de um labirinto a partir de um perspectiva em primeira pessoa. Ele foi criado usando os princípios de Ray-Casting.
 
