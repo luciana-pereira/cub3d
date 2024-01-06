@@ -6,6 +6,9 @@ A _**técnica de Ray-Casting**_, simula a visão de uma câmera 3D em uma proje�
 
 ## Etapas do desenvolvimento:
 Além de aplicar as __boas práticas de programação em C__, como __gerenciamento adequado de memória__, __modularização do código em funções__ e __documentação__ adequada, foi necessario aprender sobre __otimização de desempenho__ para garantir que o jogo seja executado suavemente.
+
+A parte _**mandatoria**_, compoem:
+
 - #### Configuração da janela e buffer de imagem:
 - [ ] Inicialize a janela MinilibX.
 - [ ] Criar um buffer de imagem para desenhar o labirinto.
