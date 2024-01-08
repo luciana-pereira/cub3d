@@ -7,6 +7,7 @@ A _**técnica de Ray-Casting**_, simula a visão de uma câmera 3D em uma proje�
 ## Etapas do desenvolvimento:
 Além de aplicar as __boas práticas de programação em C__, como __gerenciamento adequado de memória__, __modularização do código em funções__ e __documentação__ adequada, foi necessario aprender sobre __otimização de desempenho__ para garantir que o jogo seja executado suavemente.
 
+<!--
 A parte _**mandatoria**_, compoem:
 
 - #### Configuração da janela e buffer de imagem:
@@ -36,36 +37,43 @@ A parte _**mandatoria**_, compoem:
 
 - #### Loop de renderização:
 - [ ] Implementar um loop que atualiza continuamente o buffer de imagem e exibir na janela.
-
+-->
 
 ## Estrutura do Projeto
 ```
 cub3d/
 │
-├── src/             # Código-fonte do jogo
-│   ├── main.c       # Arquivo principal
-│   ├── game/        # Código do jogo em si
-│   ├── graphics/    # Código para renderização gráfica
-│   ├── input/       # Código de entrada (controles do jogador)
-│   ├── assets/      # Recursos do jogo (texturas, modelos, etc.)
+|   ├── bonus/             # Código-fonte do jogo, parte bonus
+|   |   ├── assets/          # Recursos do jogo (texturas e mapas)
+|   |   ├── include/         # Arquivos de cabeçalho (.h)
+|   |   │   ├── game.h
+|   |   │   ├── graphics.h
+|   |   │   ├── input.h
+|   |   │   └──
+|   |   ├── src/             # Código-fonte do jogo
+|   |   │   ├── main.c       # Arquivo principal
+|   |   │   ├── game/        # Código do jogo em si
+|   |   │   ├── graphics/    # Código para renderização gráfica
+|   |   │   ├── input/       # Código de entrada (controles do jogador)
+|   |   │   ├── assets/      # Recursos do jogo (texturas, modelos, etc.)
+|   |   |   └──
+|   |   └── 
+|   ├── mandatory/             # Código-fonte do jogo, parte obrigatoria
+|   |   ├── assets/          # Recursos do jogo (texturas e mapas)
+|   |   ├── include/         # Arquivos de cabeçalho (.h)
+|   |   ├── src/             # Código-fonte do jogo
+|   |   │   ├── main.c       # Arquivo principal
+|   |   │   ├── main.c       # Arquivo principal
+|   |   │   ├── main.c       # Arquivo principal
+|   |   │   ├── main.c       # Arquivo principal
+|   |   |   └── 
+|   |   └── 
+|   ├── lib/                   # Bibliotecas e dependências do projeto
+|   |   ├── libft/             # Biblioteca personalizada
+|   |   ├── minilibx-linux/    # Biblioteca gráfica
+|   └── ...
+├── Makefile                   # Arquivo de compilação
+├── README.md                  # Documentação do projeto
 │
-├── include/         # Arquivos de cabeçalho (.h)
-│   ├── game.h
-│   ├── graphics.h
-│   ├── input.h
-│   ├── ...
-│
-├── lib/             # Bibliotecas e dependências do projeto
-│   ├── libft/    # Biblioteca Libft (ou outra biblioteca gráfica)
-│   ├── ...
-│
-├── data/            # Dados do jogo (mapas, configurações)
-│
-├── bin/             # Executável compilado
-│
-├── Makefile         # Arquivo de compilação
-│
-├── README.md        # Documentação do projeto
-│
-└── ...
+└── 
 ```
