@@ -3,10 +3,6 @@
 
 # include "structs.h"
 
-t_image get_wall_texture(t_game *game, int x, int *invert);
-int get_wall_texture_color(t_game *game, int x, int coord[2], int *invert);
-
-
 // | Events
 int		key_press(int key, t_game *game);
 void	move_player(t_game *game, int walk, int camera_control);
@@ -14,7 +10,6 @@ void	move_player(t_game *game, int walk, int camera_control);
 // | Graphics
 int		render_frame(t_game *game);
 void	print_map(t_map *map, int **map_matrix);
-void	init_graph_env(t_map *map, t_player *player);
 void	paint_img(t_image *image, int x, int y, int color);
 // void	draw_line(t_image *image, t_pos a, t_pos b, int color);
 
@@ -35,6 +30,7 @@ int		top_bot_pixel(t_game *game, int col, int control);
 // | Parse
 int		**copy_map(t_map *map);
 int		verify_line(char *str);
+int		verify_xpm_file(char *path);
 int		verify_colors(t_config *input);
 int		verify_textures(t_config *input);
 t_lst	*remove_empty_lines(t_lst *start);
@@ -59,4 +55,5 @@ void	free_array(char **array);
 void	free_input(t_config *input);
 int		is_numeric(const char *str);
 char	*remove_whitespaces(const char *str);
+
 #endif
