@@ -45,36 +45,6 @@ SRC_FILES		=	mandatory/src/events/key_events.c					\
 					mandatory/src/utils/utils.c	    				    \
 					mandatory/src/main.c								\
 
-SRC_FILES_BONUS	=	bonus/src/parse/verify_args_bonus.c	    			\
-					bonus/src/parse/map_handler_bonus.c	    			\
-					bonus/src/parse/03_check_colors_bonus.c				\
-					bonus/src/parse/04_check_textures_bonus.c 			\
-					bonus/src/parse/check_map_bonus.c		    		\
-					bonus/src/parse/check_path_bonus.c	    			\
-					bonus/src/parse/map_limit_bonus.c					\
-					bonus/src/parse/read_map_bonus.c					\
-					bonus/src/parse/exit/errors_bonus.c					\
-					bonus/src/parse/exit/exit_bonus.c					\
-					bonus/src/parse/exit/free_all_bonus.c				\
-					bonus/src/parse/exit/free_cub_bonus.c				\
-					bonus/src/events/click_handler_bonus.c				\
-					bonus/src/setup/initialization_bonus.c				\
-					bonus/src/player/player_movement_bonus.c			\
-					bonus/src/player/player_bonus.c						\
-					bonus/src/graphics/print_map_bonus.c				\
-					bonus/src/graphics/render_walls_bonus.c				\
-					bonus/src/graphics/drawing_bonus.c					\
-					bonus/src/graphics/graphics_bonus.c					\
-					bonus/src/graphics/draw_line_bonus.c	 			\
-					bonus/src/graphics/load_textures_bonus.c			\
-					bonus/src/graphics/rendering_bonus.c	    		\
-					bonus/src/graphics/draw_minimap_bonus.c				\
-					bonus/src/rays/ray_casting_bonus.c	   				\
-					bonus/src/rays/ray_intercept_bonus.c				\
-					bonus/src/rays/ray_processing_bonus.c	   			\
-					bonus/src/math/math_ops_bonus.c	      				\
-					bonus/src/math/calculate_bonus.c	      			\
-					bonus/src/main_bonus.c								\
 
 CC = cc
 RM = -rm -f
