@@ -1,65 +1,152 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/17 14:59:16 by lucperei          #+#    #+#              #
-#    Updated: 2023/12/10 05:33:48 by lucperei         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME 		= cub3D
+NAME_BONUS	= cub3D_bonus
 
-# Directories
+LIBFT_PATH	= ./lib/libft
+LIBFT		= $(LIBFT_PATH)/libft.a
 
-# Comandos
-CC = cc -g3
-RM = rm -rf
-FLAGS = -Wall -Werror -Wextra -I./ -c
-MLX_FLAGS = -lX11 -lXext -lmlx -lm
+MLX_PATH	= ./lib/minilibx-linux
+MLX			= $(MLX_PATH)/libmlx.a
 
-# Arquivos
-NAME		= cub3D
-SRC			= src/main.c \
-			  src/error.c \
-			  src/free.c \
-			  src/utils.c \
-			  src/verify_map.c \
+INCLUDE =	-I ../../include -I $(LIBFT_PATH)
 
+SRC_FILES		=	mandatory/src/events/key_events.c					\
+					mandatory/src/events/movement.c		    			\
+					mandatory/src/graphics/render_walls.c				\
+					mandatory/src/graphics/drawing.c					\
+					mandatory/src/graphics/load_textures.c				\
+					mandatory/src/graphics/rendering.c	  				\
+					mandatory/src/init/init_game.c	        			\
+					mandatory/src/init/init_graph_env.c	      			\
+					mandatory/src/init/init_map.c	        			\
+					mandatory/src/init/init_mlx.c	        			\
+					mandatory/src/init/init_player.c	      			\
+					mandatory/src/init/init_setup.c	        			\
+					mandatory/src/math/calculate.c						\
+					mandatory/src/math/flood_fill.c						\
+					mandatory/src/math/math_oper.c						\
+					mandatory/src/parse/colors.c						\
+					mandatory/src/parse/file_processing.c	     		\
+					mandatory/src/parse/map_allocation.c				\
+					mandatory/src/parse/map_operations.c				\
+					mandatory/src/parse/map_processing.c				\
+					mandatory/src/parse/map_valid_config.c	    		\
+					mandatory/src/parse/map_validation.c				\
+					mandatory/src/parse/map_verification.c				\
+					mandatory/src/parse/process_elements.c				\
+					mandatory/src/parse/process_input.c  				\
+					mandatory/src/parse/textures.c						\
+					mandatory/src/rays/ray_casting.c   					\
+					mandatory/src/rays/ray_intercept.c					\
+					mandatory/src/rays/ray_processing.c	 				\
+					mandatory/src/utils/errors.c						\
+					mandatory/src/utils/free_array.c	 				\
+					mandatory/src/utils/free_map.c	    				\
+					mandatory/src/utils/free_struct.c	 				\
+					mandatory/src/utils/utils.c	    				    \
+					mandatory/src/main.c								\
 
-LIBFT_PATH  = ./lib/libft
-LIBFT 	    = $(LIBFT_PATH)/libft.a
+SRC_FILES_BONUS	=	bonus/src/parse/verify_args_bonus.c	    			\
+					bonus/src/parse/map_handler_bonus.c	    			\
+					bonus/src/parse/03_check_colors_bonus.c				\
+					bonus/src/parse/04_check_textures_bonus.c 			\
+					bonus/src/parse/check_map_bonus.c		    		\
+					bonus/src/parse/check_path_bonus.c	    			\
+					bonus/src/parse/map_limit_bonus.c					\
+					bonus/src/parse/read_map_bonus.c					\
+					bonus/src/parse/exit/errors_bonus.c					\
+					bonus/src/parse/exit/exit_bonus.c					\
+					bonus/src/parse/exit/free_all_bonus.c				\
+					bonus/src/parse/exit/free_cub_bonus.c				\
+					bonus/src/events/click_handler_bonus.c				\
+					bonus/src/setup/initialization_bonus.c				\
+					bonus/src/player/player_movement_bonus.c			\
+					bonus/src/player/player_bonus.c						\
+					bonus/src/graphics/print_map_bonus.c				\
+					bonus/src/graphics/render_walls_bonus.c				\
+					bonus/src/graphics/drawing_bonus.c					\
+					bonus/src/graphics/graphics_bonus.c					\
+					bonus/src/graphics/draw_line_bonus.c	 			\
+					bonus/src/graphics/load_textures_bonus.c			\
+					bonus/src/graphics/rendering_bonus.c	    		\
+					bonus/src/graphics/draw_minimap_bonus.c				\
+					bonus/src/rays/ray_casting_bonus.c	   				\
+					bonus/src/rays/ray_intercept_bonus.c				\
+					bonus/src/rays/ray_processing_bonus.c	   			\
+					bonus/src/math/math_ops_bonus.c	      				\
+					bonus/src/math/calculate_bonus.c	      			\
+					bonus/src/main_bonus.c								\
 
-HEADER = include/cub3d.h
+CC = cc
+RM = -rm -f
+RM_DIR = rm -rf
 
-# Arquivos e Diretórios
-OBJ 	    = $(SRC:.c=.o)
+OBJ_DIR	  = ./mandatory/obj
+OBJ_FILES = $(SRC_FILES:%.c=$(OBJ_DIR)/%.o)
 
-# Cores para saída no terminal
-COLOR_RED	= \e[0;31m
-COLOR_GREEN	= \e[0;32m
-COLOR_PURPLE= \e[0;35m
-COLOR_WHITE	= \e[0;37m
+OBJ_DIR_BONUS	= ./bonus/obj
+OBJ_FILES_BONUS = $(SRC_FILES_BONUS:%.c=$(OBJ_DIR_BONUS)/%.o)
 
-# Regras
-.SILENT:
+HEADER_FILES	=	mandatory/includes/cub3d.h			\
+					mandatory/includes/buttons.h		\
+					mandatory/includes/structs.h		\
+					mandatory/includes/colors.h			\
+					mandatory/includes/constants.h		\
+					mandatory/includes/errors.h			\
+					mandatory/includes/functions.h		\
 
-all:	$(NAME)
+HEADER_FILES_BONUS	=	bonus/includes/cub3d_bonus.h	\
+						bonus/includes/buttons_bonus.h	\
+						bonus/includes/structs_bonus.h	\
+						bonus/includes/colors_bonus.h	\
+						bonus/includes/constants_bonus.h\
+						bonus/includes/errors_bonus.h	\
+						bonus/includes/functions_bonus.h\
 
-$(NAME):	$(LIBFT) $(OBJ)
-	$(CC) $(OBJ) $(MLX_FLAGS) $(LIBFT) -o $(NAME)
+CFLAGS = -Wall -Werror -Wextra -g3
+MLXFLAGS = -lm -lXext -lX11
+
+all: $(OBJ_DIR) $(NAME)
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFT_PATH)
-	
+	@make -C $(LIBFT_PATH) --no-print-directory
+
+$(MLX):
+	@make -C $(MLX_PATH)
+
+$(NAME): $(LIBFT) $(MLX) $(OBJ_FILES)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ_FILES) $(LIBFT) $(MLX) $(MLXFLAGS)
+
+$(OBJ_DIR)/%.o: %.c $(HEADER_FILES)
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE)
+
+bonus: $(OBJ_DIR_BONUS) $(NAME_BONUS)
+
+$(OBJ_DIR_BONUS):
+	@mkdir -p $(OBJ_DIR_BONUS)
+
+$(NAME_BONUS): $(LIBFT) $(MLX) $(OBJ_FILES_BONUS)
+	@$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJ_FILES_BONUS) $(LIBFT) $(MLX) $(MLXFLAGS)
+
+$(OBJ_DIR_BONUS)/%.o: %.c $(HEADER_FILES_BONUS)
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE)
+
 clean:
-	@$(MAKE) -C $(LIBFT_PATH) clean
-	@$(RM) $(OBJ)
+	@make clean -C $(LIBFT_PATH) --no-print-directory
+	@$(RM) $(OBJ_FILES)
+	@$(RM) $(OBJ_FILES_BONUS)
 
 fclean: clean
-	@$(MAKE) -C $(LIBFT_PATH) fclean
+	@make fclean -C $(LIBFT_PATH) --no-print-directory
 	@$(RM) $(NAME)
+	@$(RM) $(NAME_BONUS)
+	@$(RM_DIR) $(OBJ_DIR)
+	@$(RM_DIR) $(OBJ_DIR_BONUS)
 
-re:	  fclean all 
+re: fclean all
 
-.PHONY: all clean fclean re  
+.PHONY: all clean fclean re bonus

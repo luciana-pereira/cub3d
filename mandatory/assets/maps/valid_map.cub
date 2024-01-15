@@ -1,0 +1,13 @@
+NO ./mandatory/assets/textures/north.xpm
+SO ./mandatory/assets/textures/south.xpm
+WE ./mandatory/assets/textures/west.xpm
+EA ./mandatory/assets/textures/east.xpm
+
+F 64,64,64,0
+C 128,128,128,0
+
+11111
+100101
+101001
+1100N1
+111111

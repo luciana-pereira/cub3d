@@ -1,48 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2023/12/10 03:00:26 by lucperei         ###   ########.fr       */
+/*   Updated: 2023/12/30 22:32:41 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#ifndef CUB3D_H
+# define CUB3D_H
 
-void	free_array(char ***array)
-{
-	int	index;
+# include <mlx.h>
+# include <math.h>
+# include <fcntl.h>
+# include <errno.h>
+# include <float.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
+# include <stdbool.h>
+# include <X11/keysym.h>
+# include "../../lib/libft/libft.h"
+# include "../../lib/minilibx-linux/mlx_int.h"
 
-	index = 0;
-	while (array && array[0] && array[0][index])
-	{
-		free(array[0][index]);
-		index++;
-	}
-	if (array)
-	{
-		free(array[0]);
-		*array = NULL;
-	}
-}
+# include "colors.h"
+# include "constants.h"
+# include "errors.h"
+# include "functions.h"
+# include "structs.h"
 
-void	destroy_image(t_game *game)
-{
-	
-    // Mesma logica para a textura -> free_texture(game);
-	if (game->win)
-		mlx_destroy_image(game->mlx, game->win);
-}
-
-void	free_game_memory(t_game *game)
-{
-	if (!game)
-		return ;
-	free_array(&game->map);
-	destroy_image(game);
-	mlx_destroy_display(game->mlx);
-	free(game->mlx);
-}
+#endif
