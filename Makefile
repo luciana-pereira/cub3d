@@ -45,7 +45,6 @@ SRC_FILES		=	mandatory/src/events/key_events.c					\
 					mandatory/src/utils/utils.c	    				    \
 					mandatory/src/main.c								\
 
-
 CC = cc
 RM = -rm -f
 RM_DIR = rm -rf
