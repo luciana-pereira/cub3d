@@ -21,7 +21,12 @@ void	paint_img(t_image *image, int x, int y, int color);
 // | Init
 void	init_mlx(t_game	*game);
 void	init_mlx_hooks(t_game *game);
+void	init_structure(t_config *input);
 void	init_map(t_config **input, t_map **map);
+void	init_settings(t_config *input, char **argv);
+void	init_graph_env(t_map *map, t_player *player);
+int		init_game(t_config *input, t_map **map, t_player **player);
+int 	init_player(t_player **player, int py, int px, char player_dir);
 
 // | Math
 void	flood_fill(int **duplicate, int x, int y, t_map *map);

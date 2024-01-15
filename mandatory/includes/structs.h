@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/15 13:44:39 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/15 14:08:38 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,6 @@ typedef struct s_config
 	size_t	width;
 	t_tex	tex;
 }	t_config;
-
-typedef struct s_pos
-{
-	int		x;
-	int		y;
-}				t_pos;
 
 typedef struct s_hit
 {
