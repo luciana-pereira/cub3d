@@ -21,7 +21,7 @@ int	key_press(int key, t_game *game)
 			game->player->angle += TURN_SPEED;
 		if (key == LEFT || key == A_KEY)
 			game->player->angle += -1 * TURN_SPEED;
-		game->player->angle = normalize_angle(game->player->angle);
+		game->player->angle = fix_ang(game->player->angle);
 	}
 	if (key == W_KEY || key == UP)
 		move_player(game, 1, 0);

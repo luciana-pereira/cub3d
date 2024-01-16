@@ -121,6 +121,6 @@ void	calc_vert_ray_intercept(t_game *game, t_player *player, t_rays *ray)
 
 	horz = cal_coord_intercept(game, *ray, 'h');
 	vert = cal_coord_intercept(game, *ray, 'v');
-	find_closest_wall(&horz, &vert, player, ray->angle);
+	find_wall(&horz, &vert, player, ray->angle);
 	update_ray_distances(ray, &horz, &vert);
 }

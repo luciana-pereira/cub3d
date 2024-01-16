@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_array.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/08 02:07:49 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/13 17:55:59 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
-int main(int argc, char **argv)
+/**
+** Libera a memória alocada para um array bidimensional.
+**
+** @param array: ponteiro para o array bidimensional.
+** @param y: número de linhas do array.
+*/
+void	free_2d_array(int **matrix, int rows)
 {
-    t_config	*input;
-    t_map		*map;
-    t_player	*player;
+	if (matrix == NULL)
+		return ;
+	while (rows-- > 0)
+	{
+		free(matrix[rows]);
+		matrix[rows] = NULL;
+	}
+	free(matrix);
+}
 
-    if (process_input(argc, argv, &input) != 0)
-        return (-1);
-    if (init_game(input, &map, &player) != 0)
-        return (-1);
-    free_input(input);
-    init_graph_env(map, player);
-    free(player);
-    return (0);
+
+void	free_array(char **array)
+{
+	int	index;
+
+	index = 0;
+	while (array[index])
+	{
+		free(array[index]);
+		index++;
+	}
+	free(array);
 }

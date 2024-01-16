@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 04:36:56 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/15 13:59:00 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/13 21:47:49 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,4 @@ void	move_player(t_game *game, int walk, int camera_control)
 	step = (walk * 8) + 3;
 	calculate_new_coordinates(game, &x, &y, step, camera_control);
 	move_player_verify_coords(game, x, y);
-}
+	}

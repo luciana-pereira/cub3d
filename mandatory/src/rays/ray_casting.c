@@ -15,11 +15,11 @@
 int	is_facing(float angle, int direction)
 {
 	if (direction == 0) // Em baixo
-		return (angle > 0 && angle < PI);
+		return (angle > 0 && angle < M_PI);
 	else if (direction == 1) // Em cima
 		return (!is_facing(angle, 0));
 	else if (direction == 2) // Esquerda
-		return (angle < 0.5 * PI || angle > 1.5 * PI);
+		return (angle < 0.5 * M_PI || angle > 1.5 * M_PI);
 	else if (direction == 3) // Direita
 		return (!is_facing(angle, 2));
 	return (0); // Direção invalida

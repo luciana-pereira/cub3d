@@ -21,6 +21,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <stddef.h>
 # include <stdbool.h>
 # include <X11/keysym.h>
 # include "../../lib/libft/libft.h"

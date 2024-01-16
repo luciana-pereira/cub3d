@@ -25,23 +25,23 @@
  */
 static void	process_file_lines(t_config **input, char *line)
 {
-	char	*trimmed;
+	char	*current_line;
 
 	while (line)
 	{
-		trimmed = remove_whitespaces(line);
+		current_line = remove_whitespaces(line);
 		free(line);
-		if (!verify_all_elements(trimmed, *input))
+		if (!verify_all_elements(current_line, *input))
 		{
-			free(trimmed);
-			return;
+			free(current_line);
+			return ;
 		}
-		free(trimmed);
+		free(current_line);
 		if ((*input)->tex.north && (*input)->tex.south
 			&& (*input)->tex.east && (*input)->tex.west
 			&& (*input)->ceiling && (*input)->floor)
 		{
-			break;
+			break ;
 		}
 		line = get_next_line((*input)->fd);
 	}

@@ -9,6 +9,7 @@ void	move_player(t_game *game, int walk, int camera_control);
 
 // | Graphics
 int		render_frame(t_game *game);
+void	load_textures(t_game *game);
 void	print_map(t_map *map, int **map_matrix);
 void	paint_img(t_image *image, int x, int y, int color);
 void	draw_wall(t_game *game, int x, int top_pixel, int bot_pixel);
@@ -34,10 +35,10 @@ void	scanline_flood_fill(int **duplicate, int x, int y, t_map *map);
 // | Parse
 int		**copy_map(t_map *map);
 int		verify_line(char *str);
+t_lst	*remove_empty(t_lst *start);
 int		verify_xpm_file(char *path);
 int		verify_colors(t_config *input);
 int		verify_textures(t_config *input);
-t_lst	*remove_empty_lines(t_lst *start);
 int		process_color(char **color, int *arg);
 void	load_map(t_config **input, t_map **map);
 int		read_and_process_file(t_config **input);
@@ -45,6 +46,8 @@ int		verify_players(t_config *input, int **map);
 int		is_valid_map_path(t_map *map, int x, int y);
 int		**create_map(t_lst *start, t_config **input);
 int		verify_all_elements(char *line, t_config *input);
+int		**read_map(int fd, t_config **input, t_lst *node);
+int		process_input(int argc, char **argv, t_config **input);
 int		verify_map(t_lst *map, t_config **input, int inside_map);
 int		get_element(char element, t_config **input, int x, int y);
 int		verify_coords_elements(t_map *map, float x, float y, int flag);
@@ -69,5 +72,13 @@ void	free_array(char **array);
 void	free_input(t_config *input);
 int		is_numeric(const char *str);
 char	*remove_whitespaces(const char *str);
+
+int			print_error(char *message);
+void		exit_with_error(char *str, t_game *game);
+void		if_error(char *str);
+void		free_all(t_lst *map_line, t_config *input, int **map);
+void		free_map(t_map *map);
+void		free_map_lines(t_lst *map_line);
+void		free_2d_array(int **matrix, int rows);
 
 #endif

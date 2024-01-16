@@ -21,11 +21,11 @@
 ** 
 ** Nota: Esta função utiliza a função check_extension.
 */
-int	verify_args(int argc, char **argv)
+static int	verify_args(int argc, char **argv)
 {
 	if (argc != 2)
 		return (print_error(INVALID_ARG));
-	if (ft_strncmp(argv[1] + (ft_strlen(argv[1]) - 4), ".cub", 4))
+	if (ft_strncmp(argv[1] + (ft_strlen(argv[1]) - 4), CUB_EXTENSION, 4))
 		return (print_error(INVALID_EXT));
 	return (0);
 }
@@ -41,16 +41,16 @@ int	verify_args(int argc, char **argv)
  * @param input Ponteiro para a estrutura `t_config` que será inicializada.
  * @return 0 em caso de sucesso, -1 em caso de falha.
  */
-int process_input(int argc, char **argv, t_config **input)
+int	process_input(int argc, char **argv, t_config **input)
 {
-    if (verify_args(argc, argv) != 0)
-        return (-1);
-    *input = (t_config *)malloc(sizeof(t_config));
-    if (*input == NULL)
-        return (-1);
-    init_structure(*input);
-    init_settings(*input, argv);
-    if (*input == NULL)
-        return (-1);
-    return (0);
+	if (verify_args(argc, argv) != 0)
+		return (-1);
+	*input = (t_config *)malloc(sizeof(t_config));
+	if (*input == NULL)
+		return (-1);
+	init_structure(*input);
+	init_settings(*input, argv);
+	if (*input == NULL)
+		return (-1);
+	return (0);
 }
