@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   drawing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:16:21 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/15 14:20:21 by marvin           ###   ########.fr       */
+/*   Updated: 2024/01/14 02:00:47 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	paint_img(t_image *image, int x, int y, int color)
  *            dimensões do mapa.
  * @param map_matrix Matriz de inteiros representando o mapa a ser impresso.
  */
-void convert_and_print_map(t_map *map, int **map_matrix)
+void print_map(t_map *map, int **map_matrix)
 {
 	int		row;
 	int		col;

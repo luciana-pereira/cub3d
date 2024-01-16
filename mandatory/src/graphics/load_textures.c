@@ -21,7 +21,7 @@
 ** 
 ** Nota: Esta função utiliza as funções mlx_xpm_file_to_image e mlx_get_data_addr.
 */
-void	load_xpm(t_game *game, t_image *img, char *path)
+static void	load_xpm(t_game *game, t_image *img, char *path)
 {
 	int		width;
 	int		height;
