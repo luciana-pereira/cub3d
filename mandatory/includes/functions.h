@@ -11,7 +11,7 @@ void	move_player(t_game *game, int walk, int camera_control);
 int		render_frame(t_game *game);
 void	print_map(t_map *map, int **map_matrix);
 void	paint_img(t_image *image, int x, int y, int color);
-// void	draw_line(t_image *image, t_pos a, t_pos b, int color);
+void	draw_wall(t_game *game, int x, int top_pixel, int bot_pixel);
 
 // | Init
 void	init_mlx(t_game	*game);
@@ -24,8 +24,12 @@ int		init_game(t_config *input, t_map **map, t_player **player);
 int 	init_player(t_player **player, int py, int px, char player_dir);
 
 // | Math
-void	flood_fill(int **duplicate, int x, int y, t_map *map);
-int		top_bot_pixel(t_game *game, int col, int control);
+float	fix_ang(float angle);
+double	radians(double degrees);
+int		calc_horizontal_disp(t_rays ray);
+float	distance(float x1, float y1, float x2, float y2);
+int		calculate_position(t_game *game, int col, int control);
+void	scanline_flood_fill(int **duplicate, int x, int y, t_map *map);
 
 // | Parse
 int		**copy_map(t_map *map);
@@ -45,8 +49,18 @@ int		verify_map(t_lst *map, t_config **input, int inside_map);
 int		get_element(char element, t_config **input, int x, int y);
 int		verify_coords_elements(t_map *map, float x, float y, int flag);
 int		has_floor_ceiling(char *line, int *arg, char *element, int *flag);
-int		get_texture(t_game *game, t_image texture, int coord[2], int invert);
+int		get_texture(t_game *game, t_image tex, int coord[2], int invert);
 int		has_texture(char *line, t_config *arg, char *texture, int *has_flag);
+
+// | Rays
+int		is_facing(float angle, int direction);
+void	cast_and_generate_projection(t_game *game);
+void	init_ray(t_rays *ray, t_player *player, float angle);
+void	calculate_steps(t_rays ray, t_hit *hit, char direction);
+void	find_wall(t_hit *h, t_hit *v, t_player *p, float angle);
+void	calc_vert_ray_intercept(t_game *game, t_player *player, t_rays *ray);
+void	increment_position(t_map *map, t_rays ray, t_hit *hit, char direction);
+void	calculate_intercept(t_player *player, t_rays ray, t_hit *hit, char dir);
 
 // | Utils
 void	free_game(t_game *game);
