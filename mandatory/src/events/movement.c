@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movement.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 04:36:56 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/13 21:47:49 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:36:31 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  * @param x Nova coordenada x proposta para o jogador.
  * @param y Nova coordenada y proposta para o jogador.
  */
-static void	move_player_verify_coords(t_game *game, double x, double y)
+static void	move_player_verify_coords(t_game *game, float x, float y)
 {
 	if (!verify_coords_elements(game->map, x, y, 1))
 	{
@@ -43,7 +43,7 @@ static void	move_player_verify_coords(t_game *game, double x, double y)
  * @param step Velocidade de caminhada multiplicada por um fator.
  * @param camera_control Flag que indica se o controle da câmera está ativado.
  */
-static void	calculate_new_coordinates(t_game *game, double *x, double *y, float step, int camera_control)
+static void	calculate_new_coordinates(t_game *game, float *x, float *y, float step, int camera_control)
 {
 	if (!camera_control)
 	{
@@ -70,8 +70,8 @@ static void	calculate_new_coordinates(t_game *game, double *x, double *y, float 
 void	move_player(t_game *game, int walk, int camera_control)
 {
 	float	step;
-	double	x;
-	double	y;
+	float	x;
+	float	y;
 
 	step = (walk * 8) + 3;
 	calculate_new_coordinates(game, &x, &y, step, camera_control);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures_obtaining.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:09:27 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/14 22:39:10 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/17 16:24:04 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	cal_wall_dimension(t_game *game, int coord[2], int invert, int *offset)
 		offset[0] = (invert - calc_horizontal_disp(game->rays[coord[0]]));
 	else
 		offset[0] = calc_horizontal_disp(game->rays[coord[0]]);
-	dist_to_top = coord[1] + (floor(height) / 2) - (WIN_H / 2);
-	offset[1] = dist_to_top * ((float)64 / floor(height));
+	dist_to_top = coord[1] + (floor(height) / 2) - ((float)WIN_H / 2);
+	offset[1] = dist_to_top * (64.0 / floor(height));
 }
 
 

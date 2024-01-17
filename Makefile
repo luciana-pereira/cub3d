@@ -4,8 +4,9 @@ NAME_BONUS	= cub3D_bonus
 LIBFT_PATH	= ./lib/libft
 LIBFT		= $(LIBFT_PATH)/libft.a
 
-MLX_PATH	= ./lib/minilibx-linux
-MLX			= $(MLX_PATH)/libmlx.a
+# MLX_PATH	= ./lib/minilibx-linux
+# MLX		= $(MLX_PATH)/libmlx.a
+MLX			= -lmlx
 
 INCLUDE =	-I ../../include -I $(LIBFT_PATH)
 

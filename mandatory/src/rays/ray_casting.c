@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/14 22:11:56 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/17 13:41:12 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static void	init_ray_directions(t_rays *ray, float angle)
 	ray->vx = is_facing(ray->angle, 1);
 	ray->hx = is_facing(ray->angle, 2);
 	ray->hy = is_facing(ray->angle, 3);
+
 }
 
 /**
@@ -73,7 +74,7 @@ void	cast_and_generate_projection(t_game *game)
 		angle = fix_ang(angle);
 		init_ray(&game->rays[pixel_col], game->player, angle);
 		calc_vert_ray_intercept(game, game->player, &game->rays[pixel_col]);
-		angle += FOV / game->num_rays;
+		angle += (double)FOV / (double)game->num_rays;
 		top_pixel = calculate_position(game, pixel_col, 1);
 		bottom_pixel = calculate_position(game, pixel_col, 0);
 		draw_wall(game, pixel_col, top_pixel, bottom_pixel);

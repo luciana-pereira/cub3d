@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_events.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 04:29:47 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/14 00:08:15 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:14:32 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int	key_press(int key, t_game *game)
 		game->player->angle = fix_ang(game->player->angle);
 	}
 	if (key == W_KEY || key == UP)
-		move_player(game, 1, 0);
+		move_player(game, 2, 0);
 	if (key == S_KEY || key == DOWN)
-		move_player(game, -1, 0);
+		move_player(game, -2, 0);
 	if (key == ESC)
 	{
 		if (game)

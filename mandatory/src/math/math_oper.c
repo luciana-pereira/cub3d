@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:01:11 by luizedua          #+#    #+#             */
-/*   Updated: 2023/12/25 15:09:37 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:33:18 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,16 @@
  */
 float	fix_ang(float angle)
 {
-	float	two_pi;
+	// float	two_pi;
 
-	two_pi = M_PI * 2.0f;
-	angle = remainder(angle, two_pi);
-	if (angle < 0)
-		angle += two_pi;
+	// two_pi = M_PI * 2.0f;
+	// angle = remainder(angle, two_pi);
+	// if (angle < 0)
+	// 	angle += two_pi;
+	if(angle < 0)
+		angle += 2 * M_PI;
+	if (angle > 2 * M_PI)
+		angle -= 2*M_PI;
 	return (angle);
 }
 
@@ -61,7 +65,7 @@ float	distance(float x1, float y1, float x2, float y2)
  * @param degrees Valor em graus a ser convertido para radianos.
  * @return Valor em radianos correspondente à conversão.
  */
-double	radians(double degrees)
+float	radians(float degrees)
 {
 	return (degrees * M_PI / 180);
 }

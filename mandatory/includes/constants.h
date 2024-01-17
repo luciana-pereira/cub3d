@@ -2,14 +2,14 @@
 #define CONSTANTS_H
 
 # define WIN_W 1024
-# define WIN_H 512
+# define WIN_H 768
 
 # define XPM_FILE "/* XPM */"
 # define XPM_EXTENSION ".xpm"
 # define CUB_EXTENSION ".cub"
 
 # define FOV 1.047198
-# define TURN_SPEED 0.196349541
+# define TURN_SPEED 0.09
 
 # define DIR_SOUTH 5
 # define DIR_WEST 6

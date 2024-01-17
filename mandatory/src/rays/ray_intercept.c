@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_intercept.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/07 18:41:30 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:35:36 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ t_hit	cal_coord_intercept(t_game *game, t_rays ray, char dir)
 	calculate_intercept(game->player, ray, &coord, dir);
 	calculate_steps(ray, &coord, dir);
 	increment_position(game->map, ray, &coord, dir);
-	if (dir == 'v')
-		coord.distance = calc_dist_player(game->player, coord);
-	else
+	// if (dir == 'v')
+	// 	coord.distance = calc_dist_player(game->player, coord);
+	// else
 		coord.distance = calc_dist_player(game->player, coord);
 	return (coord);
 }

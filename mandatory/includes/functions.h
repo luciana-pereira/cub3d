@@ -26,7 +26,7 @@ int 	init_player(t_player **player, int py, int px, char player_dir);
 
 // | Math
 float	fix_ang(float angle);
-double	radians(double degrees);
+float	radians(float degrees);
 int		calc_horizontal_disp(t_rays ray);
 float	distance(float x1, float y1, float x2, float y2);
 int		calculate_position(t_game *game, int col, int control);

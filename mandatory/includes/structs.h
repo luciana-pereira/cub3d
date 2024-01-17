@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/08 05:15:09 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:36:31 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ typedef struct s_config
 typedef struct s_hit
 {
 	float	distance;
-	double	hit_x;
-	double	hit_y;
+	float	hit_x;
+	float	hit_y;
 	float	intercept[2];
 	float	step[2];
 	int		hitted;
@@ -53,26 +53,26 @@ typedef struct s_hit
 
 typedef struct s_player
 {
-	double	x;
-    double	y;
-	double	dx;
-	double	dy;
-	double	angle;
-	double	rotate;
+	float	x;
+    float	y;
+	float	dx;
+	float	dy;
+	float	angle;
+	float	rotate;
 }				t_player;
 
 typedef struct s_rays
 {
-	double	vx;
-	double	vy;
-	double	hx;
-	double	hy;
-	double	rx;
-	double	ry;
-	double	angle;
-	double	fdist;
-	double	hit_x;
-	double	hit_y;
+	float	vx;
+	float	vy;
+	float	hx;
+	float	hy;
+	float	rx;
+	float	ry;
+	float	angle;
+	float	fdist;
+	float	hit_x;
+	float	hit_y;
 	int		is_hit;
 }				t_rays;
 
