@@ -3,62 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   draw_circle_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 23:48:17 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 04:40:34 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:42:50 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 
-/**
- * @brief Desenha uma linha horizontal do círculo na imagem.
- *
- * Esta função desenha uma linha horizontal do círculo na imagem, pintando os
- * pixels dentro do círculo com a cor vermelha.
- *
- * @param img Ponteiro para a estrutura da imagem.
- * @param x Coordenada x do início da linha.
- * @param y Coordenada y do início da linha.
- * @param center_x Coordenada x do centro do círculo.
- * @param center_y Coordenada y do centro do círculo.
- * @param radius Raio do círculo.
- */
-static void	draw_circle_row(t_image *img, int x, int y, int center_x, int center_y, int radius)
+static void	draw_circle_row(t_image *img, int xy[2], int c_xy[2], int radius)
 {
-	while (y <= center_x + radius)
+	while (xy[1] <= c_xy[0] + radius)
 	{
-		if ((x - center_x) * (x - center_x) + (y - center_y) * (y - center_y)
+		if ((xy[0] - c_xy[0]) * (xy[0] - c_xy[0]) + (xy[1] - c_xy[1]) * \
+					(xy[1] - c_xy[1])
 			< radius * radius)
-			paint_img(img, x, y, COLOR_RED);
-		y++;
+			paint_img(img, xy[0], xy[1], COLOR_RED);
+		xy[1]++;
 	}
 }
 
-/**
- * @brief Desenha um círculo na imagem com o centro especificado.
- *
- * Esta função desenha um círculo na imagem com o centro especificado pelas
- * coordenadas (xc, yc) e raio 'r'. O círculo é desenhado pintando os pixels
- * dentro do círculo com a cor vermelha.
- *
- * @param image Ponteiro para a estrutura da imagem.
- * @param xc Coordenada x do centro do círculo.
- * @param yc Coordenada y do centro do círculo.
- * @param radius Raio do círculo.
- */
 void	draw_circle(t_image *image, int center_x, int center_y, int radius)
 {
-	int	x;
-	int	y;
+	int	xy[2];
+	int	center_xy[2];
 
-	x = center_x - radius;
+	center_xy[0] = 0;
+	center_xy[1] = 0;
+	xy[0] = center_x - radius;
 	paint_img(image, center_x, center_y, COLOR_RED);
-	while (x <= center_x + radius)
+	while (xy[0] <= center_x + radius)
 	{
-		y = center_y - radius;
-		draw_circle_row(image, x, y, center_x, center_y, radius);
-		x++;
+		xy[1] = center_y - radius;
+		center_xy[0] = center_x;
+		center_xy[1] = center_y;
+		draw_circle_row(image, xy, center_xy, radius);
+		xy[0]++;
 	}
 }

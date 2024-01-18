@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_struct_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 02:05:31 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:09:39 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,39 +34,20 @@ static void	free_game_resources(t_game *game)
 	}
 }
 
-void free_game(t_game *game)
+void	free_game(t_game *game)
 {
 	free_game_resources(game);
 	free(game);
 }
 
-/**
- * @brief Libera os recursos associados à estrutura do jogo e encerra o programa.
- *
- * Esta função é responsável por liberar os recursos alocados dinamicamente na estrutura
- * do jogo (t_game) e encerrar o programa. Ela utiliza a função free_resources para
- * realizar a liberação de memória associada à estrutura do jogo. Após a liberação de
- * recursos, a função imprime uma mensagem de saída usando ft_printf e chama exit(0) para
- * encerrar o programa.
- *
- * @param game Ponteiro para a estrutura principal do jogo.
- * @return Sempre retorna 0 após a execução.
- */
 int	close_win(t_game *game)
 {
-    free_game(game);
-    write(1, EXIT_THE_GAME, sizeof(EXIT_THE_GAME) - 1);
-    exit(0);
-    return (0);
+	free_game(game);
+	write(1, EXIT_THE_GAME, sizeof(EXIT_THE_GAME) - 1);
+	exit(0);
+	return (0);
 }
 
-/**
-** Libera a memória alocada para a estrutura t_config, incluindo os caminhos das texturas se estiverem presentes.
-** 
-* @param input: ponteiro para a estrutura t_config a ser liberada.
-** 
-** Nota: Os caminhos das texturas são liberados apenas se as respectivas flags estiverem definidas.
-*/
 void	free_input(t_config *input)
 {
 	if (input)

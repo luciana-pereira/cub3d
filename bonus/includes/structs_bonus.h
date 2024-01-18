@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 13:19:07 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:05:58 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ typedef struct s_hit
 typedef struct s_player
 {
 	double	x;
-    double	y;
+	double	y;
 	double	dx;
 	double	dy;
 	double	angle;

@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   errors_bonus.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/18 16:08:38 by luizedua          #+#    #+#             */
+/*   Updated: 2024/01/18 16:08:41 by luizedua         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ERRORS_BONUS_H
-#define ERRORS_BONUS_H
+# define ERRORS_BONUS_H
 
 # define ERROR_CUB3D "Cub3D: Error - "
 # define INVALID_ARG "Invalid number of arguments, run: ./cub3D path_to_map"

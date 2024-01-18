@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   functions_bonus.h                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/18 16:06:05 by luizedua          #+#    #+#             */
+/*   Updated: 2024/01/18 16:22:12 by luizedua         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FUNCTIONS_BONUS_H
-#define FUNCTIONS_BONUS_H
+# define FUNCTIONS_BONUS_H
 
 # include "structs_bonus.h"
 
@@ -8,8 +20,8 @@ int		key_press(int key, t_game *game);
 void	move_player(t_game *game, int walk, int camera_control);
 
 // | Events -> Mouse
-int	mouse_hook(int x, int y, void *g);
-int	mouse_click(int click, int x, int y, void *g);
+int		mouse_hook(int x, int y, void *g);
+int		mouse_click(int click, int x, int y, void *g);
 
 // | Graphics
 int		render_frame(t_game *game);
@@ -35,7 +47,7 @@ void	init_map(t_config **input, t_map **map);
 void	init_settings(t_config *input, char **argv);
 void	init_graph_env(t_map *map, t_player *player);
 int		init_game(t_config *input, t_map **map, t_player **player);
-int 	init_player(t_player **player, int py, int px, char player_dir);
+int		init_player(t_player **player, int py, int px, char player_dir);
 
 // | Math
 float	fix_ang(float angle);
@@ -45,7 +57,7 @@ float	distance(float x1, float y1, float x2, float y2);
 int		calculate_position(t_game *game, int col, int control);
 void	scanline_flood_fill(int **duplicate, int x, int y, t_map *map);
 // int		*calculate_diff(t_coords start, t_coords end);
-int	*calculate_diff(t_coords a, t_coords b);
+int		*calculate_diff(t_coords a, t_coords b);
 // | Parse
 int		**copy_map(t_map *map);
 int		verify_line(char *str);
@@ -54,6 +66,7 @@ int		verify_xpm_file(char *path);
 int		verify_colors(t_config *input);
 int		verify_textures(t_config *input);
 int		process_color(char **color, int *arg);
+int		**allocate_map_memory(t_config **input);
 void	load_map(t_config **input, t_map **map);
 int		read_and_process_file(t_config **input);
 int		verify_players(t_config *input, int **map);
@@ -94,6 +107,5 @@ void	free_all(t_lst *map_line, t_config *input, int **map);
 void	free_map(t_map *map);
 void	free_map_lines(t_lst *map_line);
 void	free_2d_array(int **matrix, int rows);
-
 
 #endif

@@ -3,24 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   init_map_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 05:04:58 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 20:49:33 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:50:53 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 
-/**
- * @brief Inicializa a estrutura do mapa com base nas configurações fornecidas.
- *
- * Esta função aloca dinamicamente a estrutura do mapa e a inicializa com as cores de piso e teto, além dos caminhos
- * para as texturas nas direções leste, oeste, norte e sul. Os dados são extraídos da estrutura de configuração fornecida.
- *
- * @param input Ponteiro para o ponteiro da estrutura de configuração do jogo.
- * @param map Ponteiro para o ponteiro da estrutura do mapa.
- */
 void	init_map(t_config **input, t_map **map)
 {
 	*map = malloc(sizeof(t_map));

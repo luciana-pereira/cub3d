@@ -3,28 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   drawing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 22:15:41 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:28:58 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 
-/**
- * @brief Inicializa a biblioteca gráfica e cria uma imagem variável no contexto do jogo.
- *
- * Esta função tem como objetivo inicializar a biblioteca gráfica definida pelo
- * ponteiro `addr` e criar uma imagem variável no contexto do jogo. A imagem é
- * configurada com largura e altura especificadas por WIN_W e WIN_H, respectivamente.
- * Os detalhes da imagem, como o ponteiro para os dados, a quantidade de bits por pixel
- * (bpp), o comprimento da linha (line_len) e a ordem dos bytes (endian), são
- * armazenados na estrutura `t_image`.
- *
- * @param game Ponteiro para a estrutura principal do jogo.
- * @return Uma estrutura `t_image` contendo as informações da imagem criada.
- */
 void	paint_img(t_image *image, int x, int y, int color)
 {
 	char	*dest;
@@ -35,19 +22,7 @@ void	paint_img(t_image *image, int x, int y, int color)
 	*(unsigned int *)dest = color;
 }
 
-/**
- * @brief Imprime o mapa do jogo no console.
- *
- * Esta função recebe um ponteiro para a estrutura `t_map` e uma matriz de inteiros `map_matrix`
- * representando o mapa do jogo. Ela percorre a matriz e imprime no console os caracteres
- * correspondentes aos códigos presentes em cada posição do mapa. Os caracteres são obtidos
- * somando o valor na posição da matriz `map_matrix` com o caractere '0'.
- *
- * @param map Ponteiro para a estrutura principal do jogo, contendo informações sobre as
- *            dimensões do mapa.
- * @param map_matrix Matriz de inteiros representando o mapa a ser impresso.
- */
-void print_map(t_map *map, int **map_matrix)
+void	print_map(t_map *map, int **map_matrix)
 {
 	int		row;
 	int		col;

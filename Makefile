@@ -72,6 +72,7 @@ SRC_FILES_BONUS	=	bonus/src/events/key_events_bonus.c				\
 					bonus/src/parse/colors_bonus.c					\
 					bonus/src/parse/file_processing_bonus.c	     	\
 					bonus/src/parse/map_allocation_bonus.c			\
+					bonus/src/parse/alloc_map_bonus.c				\
 					bonus/src/parse/map_operations_bonus.c			\
 					bonus/src/parse/map_processing_bonus.c			\
 					bonus/src/parse/map_valid_config_bonus.c	    \

@@ -1,18 +1,17 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   colors_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/07 18:28:37 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:05:34 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COLORS_BONUS_H
-#define COLORS_BONUS_H
+# define COLORS_BONUS_H
 
 # define COLOR_BLUE 0x0000FF
 # define COLOR_RED 0xFF0000

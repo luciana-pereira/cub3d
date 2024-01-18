@@ -3,25 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   process_input_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:42:09 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 20:44:27 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:09:54 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 
-/**
- * @brief Verifica os argumentos de linha de comando.
- *
- * Esta função verifica se o número de argumentos é igual a 2 e se a extensão do arquivo é válida.
- * Retorna 0 se os argumentos são válidos, exibindo mensagens de erro caso contrário.
- *
- * @param argc Número de argumentos.
- * @param argv Vetor de strings contendo os argumentos.
- * @return 0 se os argumentos são válidos, mensagens de erro caso contrário.
- */
 static int	verify_args(int argc, char **argv)
 {
 	if (argc != 2)
@@ -31,17 +21,6 @@ static int	verify_args(int argc, char **argv)
 	return (0);
 }
 
-/**
- * @brief Processa a entrada do usuário e inicializa a estrutura de dados correspondente.
- *
- * Esta função verifica os argumentos de linha de comando, inicializa a estrutura
- * de entrada (`t_config`) e configura as opções do jogo com base nos argumentos.
- *
- * @param argc Número de argumentos de linha de comando.
- * @param argv Array de strings contendo os argumentos de linha de comando.
- * @param input Ponteiro para a estrutura `t_config` que será inicializada.
- * @return 0 em caso de sucesso, -1 em caso de falha.
- */
 int	process_input(int argc, char **argv, t_config **input)
 {
 	if (verify_args(argc, argv) != 0)

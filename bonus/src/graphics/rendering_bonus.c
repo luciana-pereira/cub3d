@@ -3,26 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   rendering_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 01:37:07 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:35:19 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 
-/**
- * @brief Renderiza a cena do jogo.
- *
- * Esta função realiza o processo de renderização da cena do jogo. Inclui a
- * geração do plano de fundo, o lançamento de raios para calcular a projeção
- * tridimensional e a exibição da imagem resultante na janela. Utiliza as
- * funções auxiliares, `cast_and_generate_projection`.
- *
- * @param game Ponteiro para a estrutura principal do jogo.
- * @return Um valor inteiro indicando o término da função (0 para sucesso).
- */
 int	render_frame(t_game *game)
 {
 	int	col;
@@ -45,7 +34,7 @@ int	render_frame(t_game *game)
 		row++;
 	}
 	cast_and_generate_projection(game);
-	draw_mini_map(game, game->map); // <- renderização do minimapa
+	draw_mini_map(game, game->map);
 	mlx_put_image_to_window(game->p_mlx, game->p_win, game->img.p_img, 0, 0);
 	return (0);
 }

@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   constants_bonus.h                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/18 16:08:13 by luizedua          #+#    #+#             */
+/*   Updated: 2024/01/18 16:08:21 by luizedua         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONSTANTS_BONUS_H
-#define CONSTANTS_BONUS_H
+# define CONSTANTS_BONUS_H
 
 # define WIN_W 1024
 # define WIN_H 512
 
-# define XPM_FILE "/* XPM */"
 # define XPM_EXTENSION ".xpm"
 # define CUB_EXTENSION ".cub"
 

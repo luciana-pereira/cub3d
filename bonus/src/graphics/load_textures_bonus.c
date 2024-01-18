@@ -3,25 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   load_textures_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/07 20:29:40 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:35:32 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 
-/**
- * @brief Carrega uma imagem XPM e inicializa a estrutura de imagem.
- *
- * Esta função carrega uma imagem XPM do caminho especificado e inicializa a estrutura de imagem
- * fornecida com as informações da imagem carregada.
- *
- * @param game Ponteiro para a estrutura principal do jogo.
- * @param img Ponteiro para a estrutura de imagem a ser inicializada.
- * @param path Caminho do arquivo XPM.
- */
 static void	load_xpm(t_game *game, t_image *img, char *path)
 {
 	int	width;
@@ -32,15 +22,6 @@ static void	load_xpm(t_game *game, t_image *img, char *path)
 			&img->endian);
 }
 
-
-/**
- * @brief Carrega as texturas necessárias para os diferentes pontos cardeais do jogo.
- *
- * Esta função é responsável por carregar as texturas associadas às direções norte, sul, leste e oeste do jogo.
- * Utiliza a função auxiliar 'load_xpm' para carregar cada textura com base nos caminhos especificados no mapa do jogo.
- *
- * @param game Ponteiro para a estrutura principal do jogo.
- */
 void	load_textures(t_game *game)
 {
 	load_xpm(game, &game->north, game->map->north);
