@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 11:18:47 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/18 13:19:07 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#ifndef STRUCTS_BONUS_H
+# define STRUCTS_BONUS_H
+
+typedef struct s_coords
+{
+	int	x;
+	int	y;
+}			t_coords;
 
 typedef struct s_tex
 {
@@ -44,8 +50,8 @@ typedef struct s_config
 typedef struct s_hit
 {
 	float	distance;
-	float	hit_x;
-	float	hit_y;
+	double	hit_x;
+	double	hit_y;
 	float	intercept[2];
 	float	step[2];
 	int		hitted;
@@ -53,26 +59,26 @@ typedef struct s_hit
 
 typedef struct s_player
 {
-	float	x;
-    float	y;
-	float	dx;
-	float	dy;
-	float	angle;
-	float	rotate;
+	double	x;
+    double	y;
+	double	dx;
+	double	dy;
+	double	angle;
+	double	rotate;
 }				t_player;
 
 typedef struct s_rays
 {
-	float	vx;
-	float	vy;
-	float	hx;
-	float	hy;
-	float	rx;
-	float	ry;
-	float	angle;
-	float	fdist;
-	float	hit_x;
-	float	hit_y;
+	double	vx;
+	double	vy;
+	double	hx;
+	double	hy;
+	double	rx;
+	double	ry;
+	double	angle;
+	double	fdist;
+	double	hit_x;
+	double	hit_y;
 	int		is_hit;
 }				t_rays;
 
@@ -113,6 +119,7 @@ typedef struct s_game
 	void		*p_win;
 	t_player	*player;
 	int			num_rays;
+	int			mouse;
 }				t_game;
 
 #endif

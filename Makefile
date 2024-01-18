@@ -5,7 +5,7 @@ LIBFT_PATH	= ./lib/libft
 LIBFT		= $(LIBFT_PATH)/libft.a
 
 # MLX_PATH	= ./lib/minilibx-linux
-# MLX		= $(MLX_PATH)/libmlx.a
+# MLX			= $(MLX_PATH)/libmlx.a
 MLX			= -lmlx
 
 INCLUDE =	-I ../../include -I $(LIBFT_PATH)
@@ -46,6 +46,49 @@ SRC_FILES		=	mandatory/src/events/key_events.c					\
 					mandatory/src/utils/free_struct.c	 				\
 					mandatory/src/utils/utils.c	    				    \
 					mandatory/src/main.c								\
+
+SRC_FILES_BONUS	=	bonus/src/events/key_events_bonus.c				\
+					bonus/src/events/movement_bonus.c		    	\
+					bonus/src/graphics/draw_circle_bonus.c			\
+					bonus/src/graphics/draw_minimap_bonus.c	   		\
+					bonus/src/graphics/draw_player_bonus.c	   		\
+					bonus/src/graphics/draw_rays_bonus.c	   		\
+					bonus/src/graphics/draw_row_bonus.c	    		\
+					bonus/src/graphics/draw_wall_bonus.c			\
+					bonus/src/graphics/drawing_bonus.c				\
+					bonus/src/graphics/load_textures_bonus.c		\
+					bonus/src/graphics/rendering_bonus.c	  		\
+					bonus/src/init/init_game_bonus.c	        	\
+					bonus/src/init/init_graph_env_bonus.c	      	\
+					bonus/src/init/init_map_bonus.c	        		\
+					bonus/src/init/init_mlx_bonus.c	        		\
+					bonus/src/init/init_player_bonus.c	      		\
+					bonus/src/init/init_setup_bonus.c	        	\
+					bonus/src/math/calculate_bonus.c				\
+					bonus/src/math/calculate_diff_bonus.c			\
+					bonus/src/math/math_oper_bonus.c				\
+					bonus/src/math/scanline_bonus.c					\
+					bonus/src/parse/colors_bonus.c					\
+					bonus/src/parse/file_processing_bonus.c	     	\
+					bonus/src/parse/map_allocation_bonus.c			\
+					bonus/src/parse/map_operations_bonus.c			\
+					bonus/src/parse/map_processing_bonus.c			\
+					bonus/src/parse/map_valid_config_bonus.c	    \
+					bonus/src/parse/map_validation_bonus.c			\
+					bonus/src/parse/map_verification_bonus.c		\
+					bonus/src/parse/process_elements_bonus.c		\
+					bonus/src/parse/process_input_bonus.c  			\
+					bonus/src/parse/textures_obtaining_bonus.c		\
+					bonus/src/parse/textures_validation_bonus.c		\
+					bonus/src/rays/ray_casting_bonus.c   			\
+					bonus/src/rays/ray_intercept_bonus.c			\
+					bonus/src/rays/ray_processing_bonus.c	 		\
+					bonus/src/utils/errors_bonus.c					\
+					bonus/src/utils/free_array_bonus.c	 			\
+					bonus/src/utils/free_map_bonus.c	    		\
+					bonus/src/utils/free_struct_bonus.c	 			\
+					bonus/src/utils/utils_bonus.c	    			\
+					bonus/src/main_bonus.c							\
 
 CC = cc
 RM = -rm -f
