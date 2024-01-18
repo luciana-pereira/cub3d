@@ -6,7 +6,7 @@
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 21:27:21 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 06:34:38 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,14 +101,12 @@ void	calculate_steps(t_rays ray, t_hit *hit, char direction)
  */
 static int check_collision(t_map *map, t_rays ray, t_hit *hit, char direction)
 {
+	(void)ray;
+	(void)direction;
 	float coords[2];
 
 	coords[0] = hit->hit_x;
 	coords[1] = hit->hit_y;
-	if ((ray.vx && direction == 'h') 
-		|| (ray.hy 
-		&& ray.vy && direction == 'v'))
-		coords[1] -= 1;
 	return (verify_coords_elements(map, coords[0], coords[1], 1));
 }
 

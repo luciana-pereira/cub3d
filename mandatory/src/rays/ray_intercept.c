@@ -6,7 +6,7 @@
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/07 18:41:30 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 06:37:46 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static float	calc_dist_player(t_player *p, t_hit h)
 		return (FLT_MAX);
 }
 
+
 /**
  * @brief Calcula a intercepção vertical de um raio com as paredes do mapa.
  *
@@ -69,10 +70,7 @@ t_hit	cal_coord_intercept(t_game *game, t_rays ray, char dir)
 	calculate_intercept(game->player, ray, &coord, dir);
 	calculate_steps(ray, &coord, dir);
 	increment_position(game->map, ray, &coord, dir);
-	if (dir == 'v')
-		coord.distance = calc_dist_player(game->player, coord);
-	else
-		coord.distance = calc_dist_player(game->player, coord);
+	coord.distance = calc_dist_player(game->player, coord);
 	return (coord);
 }
 

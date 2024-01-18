@@ -6,7 +6,7 @@
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 23:48:17 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 02:18:49 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 04:40:34 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,10 @@
  */
 static void	draw_circle_row(t_image *img, int x, int y, int center_x, int center_y, int radius)
 {
-	int	pos_x;
-	int	pos_y;
-
-	pos_x = x - center_x;
-	pos_y = y - center_y;
-	while (y <= center_y + radius)
+	while (y <= center_x + radius)
 	{
-		if (pos_x * pos_x + pos_y * pos_y < radius * radius)
+		if ((x - center_x) * (x - center_x) + (y - center_y) * (y - center_y)
+			< radius * radius)
 			paint_img(img, x, y, COLOR_RED);
 		y++;
 	}

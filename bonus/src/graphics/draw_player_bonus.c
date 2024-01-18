@@ -6,7 +6,7 @@
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 23:35:36 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 01:16:29 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 05:51:15 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@
  * @param player_pos Ponteiro para a estrutura de coordenadas do jogador atual.
  * @param next_pos Ponteiro para a estrutura de coordenadas da próxima posição do jogador.
  */
-static void calculate_player_positions(t_game *game, t_coords *player_pos, t_coords *next_pos)
+static void	calculate_player_positions(t_game *game, t_coords *player_pos, t_coords *next_pos)
 {
 	player_pos->x = floor(game->player->x * 0.2);
 	player_pos->y = floor(game->player->y * 0.2);
-
 	next_pos->x = floor(game->player->x * 0.2 + cos(game->player->angle) * 10);
 	next_pos->y = floor(game->player->y * 0.2 + sin(game->player->angle) * 10);
 }

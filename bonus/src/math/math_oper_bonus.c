@@ -6,7 +6,7 @@
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 01:45:12 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 01:45:19 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 06:06:02 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,10 @@
  */
 float	fix_ang(float angle)
 {
-	float	two_pi;
-
-	two_pi = M_PI * 2.0f;
-	angle = remainder(angle, two_pi);
-	if (angle < 0)
-		angle += two_pi;
+	if(angle < 0)
+		angle += 2 * M_PI;
+	if (angle > 2 * M_PI)
+		angle -= 2 * M_PI;
 	return (angle);
 }
 

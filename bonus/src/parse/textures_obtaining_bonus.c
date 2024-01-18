@@ -6,7 +6,7 @@
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:45:42 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 21:08:50 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 06:20:57 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	cal_wall_dimension(t_game *game, int coord[2], int invert, int *offset)
 		offset[0] = (invert - calc_horizontal_disp(game->rays[coord[0]]));
 	else
 		offset[0] = calc_horizontal_disp(game->rays[coord[0]]);
-	dist_to_top = coord[1] + (floor(height) / 2) - (WIN_H / 2);
+	dist_to_top = coord[1] + (floor(height) / 2) - ((float)WIN_H / 2);
 	offset[1] = dist_to_top * ((float)64 / floor(height));
 }
 

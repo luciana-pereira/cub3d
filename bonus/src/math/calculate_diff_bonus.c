@@ -6,7 +6,7 @@
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 00:58:58 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 02:04:35 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 04:47:33 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	get_difference_x(t_coords start, t_coords end)
 		return (start.x - end.x);
 }
 
-// Função para obter o delta em Y
+// Função para obter a diferença em Y
 static int	get_difference_y(t_coords start, t_coords end)
 {
 	if (end.y > start.y)
@@ -30,7 +30,7 @@ static int	get_difference_y(t_coords start, t_coords end)
 		return (start.y - end.y);
 }
 
-// Função principal que retorna um array de difference
+// Função principal que retorna um array de diferença
 int	*calculate_diff(t_coords start, t_coords end)
 {
 	int	*difference;

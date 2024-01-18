@@ -6,7 +6,7 @@
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 21:22:37 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 06:28:15 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,7 @@ t_hit	cal_coord_intercept(t_game *game, t_rays ray, char dir)
 	calculate_intercept(game->player, ray, &coord, dir);
 	calculate_steps(ray, &coord, dir);
 	increment_position(game->map, ray, &coord, dir);
-	if (dir == 'v')
-		coord.distance = calc_dist_player(game->player, coord);
-	else
-		coord.distance = calc_dist_player(game->player, coord);
+	coord.distance = calc_dist_player(game->player, coord);
 	return (coord);
 }
 

@@ -24,6 +24,7 @@ void	draw_mini_map(t_game *game, t_map *map);
 void	draw_row(t_image *image, t_coords start, t_coords end, int color);
 void	draw_circle(t_image *image, int center_x, int center_y, int radius);
 void	draw_map_row(t_game *game, t_map *map, t_coords map_pos, int sq_size);
+// void	draw_row(t_image *image, t_coords a, t_coords b, int color);
 
 // | Init
 void	init_mlx(t_game	*game);
@@ -42,8 +43,8 @@ int		calc_horizontal_disp(t_rays ray);
 float	distance(float x1, float y1, float x2, float y2);
 int		calculate_position(t_game *game, int col, int control);
 void	scanline_flood_fill(int **duplicate, int x, int y, t_map *map);
-int		*calculate_diff(t_coords start, t_coords end);
-
+// int		*calculate_diff(t_coords start, t_coords end);
+int	*calculate_diff(t_coords a, t_coords b);
 // | Parse
 int		**copy_map(t_map *map);
 int		verify_line(char *str);

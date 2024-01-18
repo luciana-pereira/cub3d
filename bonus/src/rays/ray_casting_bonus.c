@@ -6,7 +6,7 @@
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 21:19:35 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 06:26:08 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	cast_and_generate_projection(t_game *game)
 		angle = fix_ang(angle);
 		init_ray(&game->rays[pixel_col], game->player, angle);
 		calc_vert_ray_intercept(game, game->player, &game->rays[pixel_col]);
-		angle += FOV / game->num_rays;
+		angle += (double)FOV / (double)game->num_rays;
 		top_pixel = calculate_position(game, pixel_col, 1);
 		bottom_pixel = calculate_position(game, pixel_col, 0);
 		draw_wall(game, pixel_col, top_pixel, bottom_pixel);
