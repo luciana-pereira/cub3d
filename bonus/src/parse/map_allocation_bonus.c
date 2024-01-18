@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:27:06 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:24:23 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:26:59 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	**create_map(t_lst *start, t_config **input)
 	if (!map)
 		return (NULL);
 	map = populate_map(start, input, map);
-	if (!map || !verify_players(*input, map))
+	if (!map || !verify_players(*input))
 	{
 		free_2d_array(map, (*input)->height);
 		return (NULL);

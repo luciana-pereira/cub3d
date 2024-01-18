@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:06:05 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/18 16:22:12 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:24:57 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		process_color(char **color, int *arg);
 int		**allocate_map_memory(t_config **input);
 void	load_map(t_config **input, t_map **map);
 int		read_and_process_file(t_config **input);
-int		verify_players(t_config *input, int **map);
+int		verify_players(t_config *input);
 int		is_valid_map_path(t_map *map, int x, int y);
 int		**create_map(t_lst *start, t_config **input);
 int		verify_all_elements(char *line, t_config *input);

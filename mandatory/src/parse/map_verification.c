@@ -6,20 +6,19 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:54:42 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 15:22:03 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:25:45 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-int	verify_players(t_config *input, int **map)
+int	verify_players(t_config *input)
 {
 	if (!input->width)
 		return (0);
 	if (input->player > 1 || input->player == 0)
 	{
 		print_error(INVALID_PLAYER);
-		free_2d_array(map, input->height);
 		return (0);
 	}
 	return (1);
