@@ -18,7 +18,7 @@
  * Esta função realiza o processo de renderização da cena do jogo. Inclui a
  * geração do plano de fundo, o lançamento de raios para calcular a projeção
  * tridimensional e a exibição da imagem resultante na janela. Utiliza as
- * funções auxiliares `draw_background`, `cast_all_rays` e `generate_projection`.
+ * funções auxiliares, `cast_and_generate_projection`.
  *
  * @param game Ponteiro para a estrutura principal do jogo.
  * @return Um valor inteiro indicando o término da função (0 para sucesso).

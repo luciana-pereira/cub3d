@@ -12,6 +12,15 @@
 
 #include "../../includes/cub3d.h"
 
+/**
+ * @brief Inicializa a estrutura do mapa com base nas configurações fornecidas.
+ *
+ * Esta função aloca dinamicamente a estrutura do mapa e a inicializa com as cores de piso e teto, além dos caminhos
+ * para as texturas nas direções leste, oeste, norte e sul. Os dados são extraídos da estrutura de configuração fornecida.
+ *
+ * @param input Ponteiro para o ponteiro da estrutura de configuração do jogo.
+ * @param map Ponteiro para o ponteiro da estrutura do mapa.
+ */
 void	init_map(t_config **input, t_map **map)
 {
 	*map = malloc(sizeof(t_map));

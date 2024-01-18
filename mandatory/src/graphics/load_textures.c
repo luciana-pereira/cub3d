@@ -13,18 +13,19 @@
 #include "../../includes/cub3d.h"
 
 /**
-** Carrega uma textura XPM para a imagem.
-** 
-* @param game: Estrutura principal do jogo.
-* @param img: Estrutura de imagem onde a textura será carregada.
-* @param path: Caminho do arquivo XPM.
-** 
-** Nota: Esta função utiliza as funções mlx_xpm_file_to_image e mlx_get_data_addr.
-*/
+ * @brief Carrega uma imagem XPM e inicializa a estrutura de imagem.
+ *
+ * Esta função carrega uma imagem XPM do caminho especificado e inicializa a estrutura de imagem
+ * fornecida com as informações da imagem carregada.
+ *
+ * @param game Ponteiro para a estrutura principal do jogo.
+ * @param img Ponteiro para a estrutura de imagem a ser inicializada.
+ * @param path Caminho do arquivo XPM.
+ */
 static void	load_xpm(t_game *game, t_image *img, char *path)
 {
-	int		width;
-	int		height;
+	int	width;
+	int	height;
 
 	img->p_img = mlx_xpm_file_to_image(game->p_mlx, path, &width, &height);
 	img->i_add = mlx_get_data_addr(img->p_img, &img->bpp, &img->size_line,
@@ -32,11 +33,13 @@ static void	load_xpm(t_game *game, t_image *img, char *path)
 }
 
 /**
-** Carrega as texturas do jogo a partir dos caminhos fornecidos no mapa.
-** Utiliza a função load_xpm para carregar cada textura.
-** 
-* @param game: ponteiro para a estrutura principal do jogo (game).
-*/
+ * @brief Carrega as texturas necessárias para os diferentes pontos cardeais do jogo.
+ *
+ * Esta função é responsável por carregar as texturas associadas às direções norte, sul, leste e oeste do jogo.
+ * Utiliza a função auxiliar 'load_xpm' para carregar cada textura com base nos caminhos especificados no mapa do jogo.
+ *
+ * @param game Ponteiro para a estrutura principal do jogo.
+ */
 void	load_textures(t_game *game)
 {
 	load_xpm(game, &game->north, game->map->north);

@@ -13,6 +13,7 @@
 # define INVALID_TEX "Invalid texture file"
 # define INVALID_PATH "Invalid provided path"
 # define INVALID_ELEMENT "Invalid inserted element\n"
+# define INVALID_RGBD_COLOR "Invalid RGBD color"
 # define NO_MAP "There is no map in the file"
 # define EMPTY_FILE "File is empty"
 # define EXIT_THE_GAME "Exiting the game successfully\n"

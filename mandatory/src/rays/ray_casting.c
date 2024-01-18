@@ -26,6 +26,18 @@ int	is_facing(float angle, int direction)
 }
 
 // Correção do angulo
+/**
+ * @brief Verifica se o jogador está voltado para uma determinada direção.
+ *
+ * Esta função verifica se o jogador está voltado para uma determinada direção
+ * com base no ângulo e na direção especificada. Retorna 1 se estiver voltado para a direção,
+ * 0 caso contrário. Se a direção especificada for inválida, retorna 0.
+ *
+ * @param angle Ângulo do jogador.
+ * @param direction Direção para a qual verificar a orientação do jogador.
+ *                  0 - Em baixo, 1 - Em cima, 2 - Esquerda, 3 - Direita.
+ * @return 1 se o jogador estiver voltado para a direção, 0 caso contrário ou se a direção for inválida.
+ */
 static void	init_ray_directions(t_rays *ray, float angle)
 {
 	ray->angle = angle;
@@ -59,6 +71,15 @@ void	init_ray(t_rays *ray, t_player *player, float angle)
 	ray->is_hit = 0;
 }
 
+/**
+ * @brief Realiza o lançamento de raios e gera a projeção na tela.
+ *
+ * Esta função lança raios na cena e gera a projeção na tela para cada pixel da coluna.
+ * Inicializa a estrutura de raio para cada pixel, calcula a interseção do raio com as paredes
+ * usando 'calc_vert_ray_intercept' e desenha as paredes na tela usando 'draw_wall'.
+ *
+ * @param game Ponteiro para a estrutura principal do jogo.
+ */
 void	cast_and_generate_projection(t_game *game)
 {
 	float	angle;

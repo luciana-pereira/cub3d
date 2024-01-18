@@ -77,16 +77,15 @@ int calculate_position(t_game *game, int col, int control)
 }
 
 /**
-** Calcula o deslocamento horizontal na textura com base na informação do raio.
-** Retorna o valor do deslocamento.
-** 
-** @param ray: estrutura contendo informações sobre o raio lançado.
-** @return: deslocamento horizontal na textura.
-** 
-** Nota: Esta função é utilizada para determinar o deslocamento horizontal na textura
-**       com base na informação do raio, levando em consideração se o raio atingiu
-**       uma parede vertical ou horizontal.
-*/
+ * @brief Calcula o deslocamento horizontal da textura para a renderização.
+ *
+ * Esta função calcula o deslocamento horizontal da textura para a renderização, com base no raio fornecido.
+ * Se o raio colidiu com uma parede, o deslocamento é calculado usando a coordenada y de impacto na textura.
+ * Caso contrário, o deslocamento é calculado usando a coordenada x de impacto na textura.
+ *
+ * @param ray Estrutura do raio contendo informações sobre a colisão.
+ * @return O deslocamento horizontal da textura.
+ */
 int	calc_horizontal_disp(t_rays ray)
 {
 	if (ray.is_hit)

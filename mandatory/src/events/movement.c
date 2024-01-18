@@ -76,4 +76,4 @@ void	move_player(t_game *game, int walk, int camera_control)
 	step = (walk * 8) + 3;
 	calculate_new_coordinates(game, &x, &y, step, camera_control);
 	move_player_verify_coords(game, x, y);
-	}
+}

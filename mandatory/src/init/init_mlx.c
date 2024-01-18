@@ -46,7 +46,7 @@ void	init_mlx_hooks(t_game *game)
  * Esta função cria uma imagem variável utilizando a biblioteca gráfica definida pelo
  * ponteiro `addr`. A imagem é inicializada com largura e altura especificadas por WIN_W
  * e WIN_H, respectivamente. Os detalhes da imagem, como o ponteiro para os dados, a
- * quantidade de bits por pixel (bpp), o comprimento da linha (line_len) e a ordem dos
+ * quantidade de bits por pixel (bpp), o comprimento da linha (size_line) e a ordem dos
  * bytes (endian), são armazenados na estrutura `t_image`.
  *
  * @param game Ponteiro para a estrutura principal do jogo.

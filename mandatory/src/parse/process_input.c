@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verify_args.c                                      :+:      :+:    :+:   */
+/*   process_input.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/08 02:07:49 by lucperei         ###   ########.fr       */
+/*   Created: 2024/01/17 20:41:08 by lucperei          #+#    #+#             */
+/*   Updated: 2024/01/17 20:41:19 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
 /**
-** Verifica se o número correto de argumentos foi fornecido e se a extensão do arquivo é válida.
-** Retorna 0 se os argumentos e a extensão são válidos, e exibe uma mensagem de erro caso contrário.
-** 
-* @param argc: número de argumentos do programa.
-* @param argv: vetor de argumentos do programa.
-** 
-** Nota: Esta função utiliza a função check_extension.
-*/
+ * @brief Verifica os argumentos de linha de comando.
+ *
+ * Esta função verifica se o número de argumentos é igual a 2 e se a extensão do arquivo é válida.
+ * Retorna 0 se os argumentos são válidos, exibindo mensagens de erro caso contrário.
+ *
+ * @param argc Número de argumentos.
+ * @param argv Vetor de strings contendo os argumentos.
+ * @return 0 se os argumentos são válidos, mensagens de erro caso contrário.
+ */
 static int	verify_args(int argc, char **argv)
 {
 	if (argc != 2)

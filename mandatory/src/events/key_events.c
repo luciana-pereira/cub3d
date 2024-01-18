@@ -13,6 +13,18 @@
 #include "../../includes/cub3d.h"
 #include "../../includes/buttons.h"
 
+/**
+ * @brief Move o jogador na direção especificada.
+ *
+ * Esta função move o jogador em uma direção específica com base nos parâmetros fornecidos.
+ * O deslocamento é calculado com base na velocidade de caminhada e no controle da câmera.
+ *
+ * @param game Ponteiro para a estrutura principal do jogo.
+ * @param walk Valor que controla a velocidade de caminhada.
+ * @param camera_control Flag que indica se o controle da câmera está ativado.
+ *
+ * @return Retorna 0 após o processamento da tecla.
+ */
 int	key_press(int key, t_game *game)
 {
 	if (key == RIGHT || key == D_KEY || key == LEFT || key == A_KEY)

@@ -12,6 +12,16 @@
 
 #include "../../includes/cub3d.h"
 
+/**
+ * @brief Verifica se a cópia do mapa é válida.
+ *
+ * Esta função percorre a cópia do mapa e verifica se os valores nas posições são válidos.
+ * Retorna 1 se a cópia do mapa for válida, 0 caso contrário.
+ *
+ * @param map Ponteiro para a estrutura do mapa.
+ * @param duplicate Matriz contendo a cópia do mapa.
+ * @return 1 se a cópia do mapa for válida, 0 caso contrário.
+ */
 static int	is_valid_duplicate(t_map *map, int **duplicate)
 {
 	int	x;
@@ -37,17 +47,18 @@ static int	is_valid_duplicate(t_map *map, int **duplicate)
 }
 
 /**
-** Verifica se o caminho fornecido no mapa é válido.
-** Utiliza a técnica de preenchimento por inundação (flood fill) para verificar se há um caminho válido.
-** Retorna 0 se o caminho for válido e exibe uma mensagem de erro caso contrário.
-** 
-* @param map: estrutura do mapa contendo informações relevantes.
-* @param x: coordenada x de início para o preenchimento por inundação.
-* @param y: coordenada y de início para o preenchimento por inundação.
-** 
-** Nota: Esta função utiliza a função copy_map para criar uma cópia temporária do mapa.
-**       Após a verificação, a memória alocada para a cópia é liberada.
-*/
+ * @brief Verifica se o caminho no mapa é válido.
+ *
+ * Esta função verifica se o caminho no mapa é válido usando a técnica de preenchimento de varredura de linha.
+ * Cria uma cópia do mapa usando 'copy_map', realiza o preenchimento de varredura de linha com 'scanline_flood_fill'
+ * e verifica se a cópia é válida usando 'is_valid_duplicate'. Libera a memória alocada para a cópia do mapa
+ * e retorna 0 se o caminho for inválido, exibindo uma mensagem de erro. Retorna 1 se o caminho for válido.
+ *
+ * @param map Ponteiro para a estrutura do mapa.
+ * @param x Coordenada x.
+ * @param y Coordenada y.
+ * @return 0 se o caminho for inválido, 1 se for válido.
+ */
 int	is_valid_map_path(t_map *map, int x, int y)
 {
 	int	**duplicate;
