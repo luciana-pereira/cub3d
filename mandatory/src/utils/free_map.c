@@ -3,22 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:53:33 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/13 17:54:07 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:19:55 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-/**
-** Libera a memória alocada para a estrutura do mapa e seus elementos.
-** 
-* @param map: ponteiro para a estrutura do mapa a ser liberada.
-** 
-** Nota: Certifica-se de liberar a memória para os caminhos das texturas e a matriz do mapa.
-*/
 void	free_map(t_map *map)
 {
 	free(map->west);
@@ -29,14 +22,6 @@ void	free_map(t_map *map)
 	free(map);
 }
 
-/**
-** Libera a memória alocada para as linhas do mapa.
-**
-* @param map_line: ponteiro para a estrutura que representa as linhas do mapa.
-**
-** Nota: Esta função assume que a alocação de memória foi feita corretamente,
-**       e que as strings e a estrutura foram inicializadas corretamente.
-*/
 void	free_map_lines(t_lst *map_line)
 {
 	t_lst	*aux;

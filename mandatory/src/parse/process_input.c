@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verify_args.c                                      :+:      :+:    :+:   */
+/*   process_input.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/08 02:07:49 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:21:54 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-/**
-** Verifica se o número correto de argumentos foi fornecido e se a extensão do arquivo é válida.
-** Retorna 0 se os argumentos e a extensão são válidos, e exibe uma mensagem de erro caso contrário.
-** 
-* @param argc: número de argumentos do programa.
-* @param argv: vetor de argumentos do programa.
-** 
-** Nota: Esta função utiliza a função check_extension.
-*/
 static int	verify_args(int argc, char **argv)
 {
 	if (argc != 2)
@@ -30,17 +21,6 @@ static int	verify_args(int argc, char **argv)
 	return (0);
 }
 
-/**
- * @brief Processa a entrada do usuário e inicializa a estrutura de dados correspondente.
- *
- * Esta função verifica os argumentos de linha de comando, inicializa a estrutura
- * de entrada (`t_config`) e configura as opções do jogo com base nos argumentos.
- *
- * @param argc Número de argumentos de linha de comando.
- * @param argv Array de strings contendo os argumentos de linha de comando.
- * @param input Ponteiro para a estrutura `t_config` que será inicializada.
- * @return 0 em caso de sucesso, -1 em caso de falha.
- */
 int	process_input(int argc, char **argv, t_config **input)
 {
 	if (verify_args(argc, argv) != 0)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:00:31 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/13 19:44:27 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:20:52 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 /**
  * @brief Verifica se as cores do teto e do chão foram definidas corretamente.
  *
- * Esta função verifica se as cores do teto e do chão foram especificadas corretamente
- * no arquivo de configuração do jogo. Se ambas as cores não foram definidas, a função
- * imprime uma mensagem de erro indicando que as cores são inválidas e retorna um código
+ * Esta função verifica se as cores do teto e do chão foram especificadas 
+ *corretamente
+ * no arquivo de configuração do jogo. Se ambas as cores não foram definidas, 
+ *a função
+ * imprime uma mensagem de erro indicando que as cores são inválidas e retorna 
+ *um código
  * de erro correspondente.
  *
  * @param input Ponteiro para a estrutura de configuração do jogo.
- * @return 0 se as cores estiverem definidas corretamente, caso contrário, um código de erro.
+ * @return 0 se as cores estiverem definidas corretamente, caso contrário, um 
+ *código de erro.
  */
 int	verify_colors(t_config *input)
 {
@@ -32,17 +36,6 @@ int	verify_colors(t_config *input)
 	return (0);
 }
 
-/**
- * @brief Verifica se um conjunto de valores representa uma cor RGB válida.
- *
- * Esta função recebe valores para os componentes de cor (vermelho, verde e azul) e
- * verifica se estão dentro do intervalo permitido (0 a 255). Caso algum valor esteja
- * fora do intervalo, a função chama `print_error` para exibir uma mensagem de erro.
- *
- * @param red Valor do componente vermelho da cor.
- * @param green Valor do componente verde da cor.
- * @param blue Valor do componente azul da cor.
- */
 static void	is_valid_color(int red, int green, int blue)
 {
 	if ((red < 0 || red > 255) || (blue < 0 || blue > 255)
@@ -50,15 +43,6 @@ static void	is_valid_color(int red, int green, int blue)
 		print_error("Invalid RGB color");
 }
 
-/**
-** Converte uma representação de cor RGB em um valor inteiro único.
-** Retorna o valor da cor calculado, ou exibe uma mensagem de erro e retorna -1 se a cor for inválida.
-** 
-* @param color: vetor de strings representando os componentes RGB da cor.
-** 
-** Nota: Esta função assume que os componentes RGB são passados como strings e devem ser válidos (entre 0 e 255).
-**       Utiliza a função ft_atoi para converter as strings em valores inteiros.
-*/
 static int	convert_rgb(char **color)
 {
 	int	colors;

@@ -3,24 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   map_verification.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:54:42 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/13 22:55:03 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:22:03 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-/**
-** Verifica se a quantidade correta de jogadores foi especificada e se está corretamente posicionada no mapa.
-** Retorna 1 se as condições são atendidas, 0 caso contrário, exibindo uma mensagem de erro se necessário.
-**
-* @param input: Estrutura contendo informações de entrada.
-* @param map: Mapa do jogo representado por uma matriz de inteiros.
-** 
-** Nota: Esta função utiliza a função ft_free_map_array.
-*/
 int	verify_players(t_config *input, int **map)
 {
 	if (!input->width)
@@ -34,16 +25,6 @@ int	verify_players(t_config *input, int **map)
 	return (1);
 }
 
-/**
-** Verifica se todos os elementos do jogo estão corretos e válidos.
-** Esta função verifica várias propriedades do jogo, como texturas, cores do chão e do teto, etc.
-** Retorna 1 se todas as verificações passarem e 0 caso contrário.
-** 
-* @param line: linha do arquivo de configuração a ser verificada.
-* @param input: estrutura contendo todas as configurações do jogo.
-** 
-** Nota: Esta função utiliza as funções has_texture e has_floor_ceiling.
-*/
 int	verify_all_elements(char *line, t_config *input)
 {
 	if (line[0] && !verify_line(line))
@@ -51,11 +32,11 @@ int	verify_all_elements(char *line, t_config *input)
 		print_error(INVALID_CHARAC);
 		return (0);
 	}
-	if (has_texture(line, input, "NO ", &input->tex.north) ||
-		has_texture(line, input, "SO ", &input->tex.south) ||
-		has_texture(line, input, "WE ", &input->tex.west) ||
-		has_texture(line, input, "EA ", &input->tex.east) ||
-		has_floor_ceiling(line, &input->floor_color, "F ", &input->floor) ||
+	if (has_texture(line, input, "NO ", &input->tex.north) || \
+		has_texture(line, input, "SO ", &input->tex.south) || \
+		has_texture(line, input, "WE ", &input->tex.west) || \
+		has_texture(line, input, "EA ", &input->tex.east) || \
+		has_floor_ceiling(line, &input->floor_color, "F ", &input->floor) || \
 		has_floor_ceiling(line, &input->ceiling_color, "C ", &input->ceiling))
 		return (0);
 	return (1);

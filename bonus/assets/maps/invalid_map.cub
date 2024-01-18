@@ -1,0 +1,13 @@
+NO ./bonus/assets/textures/north.xpm
+SO ./bonus/assets/textures/south.xpm
+WE ./bonus/assets/textures/west.xpm
+EA ./bonus/assets/textures/east.xpm
+
+F 64,64,64,0
+C 128,128,128,0
+
+11111
+100100
+101001
+1100N1
+111111

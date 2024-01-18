@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:09:27 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 16:24:04 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:02:02 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	cal_wall_dimension(t_game *game, int coord[2], int invert, int *offset)
 	offset[1] = dist_to_top * (64.0 / floor(height));
 }
 
-
 static int	get_texture_color(t_image texture, int offset[2])
 {
-	return (*(unsigned int *)(texture.i_add + (offset[1] * texture.size_line + offset[0] * (texture.bpp / 8))));
+	return (*(unsigned int *)(texture.i_add + (offset[1] * texture.size_line + \
+			offset[0] * (texture.bpp / 8))));
 }
 
 int	get_texture(t_game *game, t_image texture, int coord[2], int invert)

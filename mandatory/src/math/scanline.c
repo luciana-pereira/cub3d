@@ -6,15 +6,14 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 22:39:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 11:27:43 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:23:25 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-void scanline_fill(int **duplicate, int x, int y, t_map *map);
+void	scanline_fill(int **duplicate, int x, int y, t_map *map);
 
-// Função para verificar se a célula já foi visitada
 static bool	is_visited(int cell_value)
 {
 	return (cell_value == 1 || cell_value == 3 || cell_value == 2);
@@ -22,7 +21,7 @@ static bool	is_visited(int cell_value)
 
 static void	fill_line_above(int **duplicate, int lr[2], int y, t_map *map)
 {
-	int 	index;
+	int	index;
 
 	index = lr[0] + 1;
 	while (index < lr[1])
@@ -50,36 +49,31 @@ void	scanline_fill(int **duplicate, int x, int y, t_map *map)
 {
 	int	lr[2];
 
-	// Encontrar a borda esquerda
 	lr[0] = x;
-	while (lr[0] >= 0 && !is_visited(duplicate[y][lr[0]]) 
+	while (lr[0] >= 0 && !is_visited(duplicate[y][lr[0]])
 		&& !(x == 0 || y == 0 || x == (map->x / 64) - 1
 		|| y == (map->y / 64) - 1))
 	{
 		duplicate[y][lr[0]] = 3;
 		lr[0]--;
 	}
-	// Encontrar a borda direita
 	lr[1] = x + 1;
-	while (lr[1] < (map->x / 64) && !is_visited(duplicate[y][lr[1]]) 
+	while (lr[1] < (map->x / 64) && !is_visited(duplicate[y][lr[1]])
 		&& !(x == 0 || y == 0 || x == (map->x / 64) - 1
 		|| y == (map->y / 64) - 1))
 	{
 		duplicate[y][lr[1]] = 3;
 		lr[1]++;
 	}
-	// Preencher a linha acima
 	if (y > 0)
 		fill_line_above(duplicate, lr, y, map);
-	// Preencher a linha abaixo
 	if (y < (map->y / 64) - 1)
 		fill_line_below(duplicate, lr, y, map);
 }
 
-// Função principal para preenchimento de scanline
 void	scanline_flood_fill(int **duplicate, int x, int y, t_map *map)
 {
-	if (y >= 0 && x >= 0 && y < (map->y / 64) && x < (map->x / 64) 
+	if (y >= 0 && x >= 0 && y < (map->y / 64) && x < (map->x / 64)
 		&& !is_visited(duplicate[y][x]))
 		scanline_fill(duplicate, x, y, map);
 }

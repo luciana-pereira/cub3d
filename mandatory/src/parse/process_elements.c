@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   process_elements.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:50:52 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/13 18:52:07 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:00:06 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	process_element(char *line, int *flag, char *element, int *arg)
 {
-	char **color;
+	char	**color;
 
 	if (!ft_strncmp(line, element, 2))
 	{

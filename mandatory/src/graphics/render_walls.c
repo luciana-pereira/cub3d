@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/17 14:25:26 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:08:39 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,29 @@ t_image	get_hit_wall_texture(t_game *game, int x, int *invert)
 	if (game->rays[x].hy)
 	{
 		*invert = (64 - 1);
-		return game->west;
+		return (game->west);
 	}
 	else
-		return game->east;
+		return (game->east);
 }
 
 t_image	get_miss_wall_texture(t_game *game, int x, int *invert)
 {
 	if (game->rays[x].vx)
-		return game->north;
+		return (game->north);
 	else
 	{
 		*invert = (64 - 1);
-		return game->south;
+		return (game->south);
 	}
 }
 
 t_image	get_wall_texture(t_game *game, int x, int *invert)
 {
 	if (game->rays[x].is_hit)
-		return get_hit_wall_texture(game, x, invert);
+		return (get_hit_wall_texture(game, x, invert));
 	else
-		return get_miss_wall_texture(game, x, invert);
+		return (get_miss_wall_texture(game, x, invert));
 }
 
 static void	draw_wall_slice(t_game *game, int x, int y, int invert)
@@ -58,16 +58,15 @@ static void	draw_wall_slice(t_game *game, int x, int y, int invert)
 void	draw_wall(t_game *game, int x, int top_pixel, int bot_pixel)
 {
 	int	coord[2];
+	int	invert;
 
+	invert = 0;
 	coord[0] = x;
 	coord[1] = top_pixel;
 	while (coord[1] < bot_pixel)
 	{
 		if (coord[1] >= 0 && coord[1] <= WIN_H)
-		{
-			int invert = 0;
 			draw_wall_slice(game, coord[0], coord[1], invert);
-		}
 		coord[1]++;
 	}
 }

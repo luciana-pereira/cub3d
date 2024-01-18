@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   functions.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/18 14:04:30 by luizedua          #+#    #+#             */
+/*   Updated: 2024/01/18 15:33:58 by luizedua         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+# define FUNCTIONS_H
 
 # include "structs.h"
 
@@ -22,7 +34,7 @@ void	init_map(t_config **input, t_map **map);
 void	init_settings(t_config *input, char **argv);
 void	init_graph_env(t_map *map, t_player *player);
 int		init_game(t_config *input, t_map **map, t_player **player);
-int 	init_player(t_player **player, int py, int px, char player_dir);
+int		init_player(t_player **player, int py, int px, char player_dir);
 
 // | Math
 float	fix_ang(float angle);
@@ -40,6 +52,7 @@ int		verify_xpm_file(char *path);
 int		verify_colors(t_config *input);
 int		verify_textures(t_config *input);
 int		process_color(char **color, int *arg);
+int		**allocate_map_memory(t_config **input);
 void	load_map(t_config **input, t_map **map);
 int		read_and_process_file(t_config **input);
 int		verify_players(t_config *input, int **map);
@@ -73,12 +86,12 @@ void	free_input(t_config *input);
 int		is_numeric(const char *str);
 char	*remove_whitespaces(const char *str);
 
-int			print_error(char *message);
-void		exit_with_error(char *str, t_game *game);
-void		if_error(char *str);
-void		free_all(t_lst *map_line, t_config *input, int **map);
-void		free_map(t_map *map);
-void		free_map_lines(t_lst *map_line);
-void		free_2d_array(int **matrix, int rows);
+int		print_error(char *message);
+void	exit_with_error(char *str, t_game *game);
+void	if_error(char *str);
+void	free_all(t_lst *map_line, t_config *input, int **map);
+void	free_map(t_map *map);
+void	free_map_lines(t_lst *map_line);
+void	free_2d_array(int **matrix, int rows);
 
 #endif

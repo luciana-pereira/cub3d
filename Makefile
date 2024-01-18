@@ -27,6 +27,7 @@ SRC_FILES		=	mandatory/src/events/key_events.c					\
 					mandatory/src/math/math_oper.c						\
 					mandatory/src/parse/colors.c						\
 					mandatory/src/parse/file_processing.c	     		\
+					mandatory/src/parse/allocate_map.c					\
 					mandatory/src/parse/map_allocation.c				\
 					mandatory/src/parse/map_operations.c				\
 					mandatory/src/parse/map_processing.c				\

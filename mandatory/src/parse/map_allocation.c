@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_allocation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:27:06 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/13 20:31:13 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:34:11 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
-
-static int **allocate_map_memory(t_config **input)
-{
-	int **map;
-
-	map = NULL;
-	if ((*input)->height > 0)
-		map = (int **)malloc(sizeof(int *) * (*input)->height);
-	return (map);
-}
 
 static int	*allocate_map_row(t_config **input)
 {
@@ -32,7 +22,8 @@ static int	*allocate_map_row(t_config **input)
 	return (row_ptr);
 }
 
-static int	allocate_and_get_element(t_config **input, t_lst *start, size_t row, size_t col, int **map)
+static int	allocate_and_get_element(t_config **input, t_lst *start, \
+													size_t row, size_t col)
 {
 	int	element;
 
@@ -40,32 +31,29 @@ static int	allocate_and_get_element(t_config **input, t_lst *start, size_t row, 
 		element = get_element(' ', input, row, col);
 	else
 		element = get_element(start->content[col], input, row, col);
-
 	if (element == -1)
-	{
-		free_2d_array(map, row + 1);
 		return (-1);
-	}
-
 	return (element);
 }
 
-static int	**populate_map_row(t_lst *start, t_config **input, int **map, size_t row)
+static int	**populate_map_row(t_lst *start, t_config **input, int **map, \
+																	size_t row)
 {
 	size_t	col;
 
 	map[row] = allocate_map_row(input);
 	if (!map[row])
 		return (NULL);
-
 	col = -1;
 	while (++col < (*input)->width)
 	{
-		map[row][col] = allocate_and_get_element(input, start, row, col, map);
+		map[row][col] = allocate_and_get_element(input, start, row, col);
 		if (map[row][col] == -1)
+		{
+			free_2d_array(map, row + 1);
 			return (NULL);
+		}
 	}
-
 	return (map);
 }
 
@@ -79,21 +67,19 @@ static int	**populate_map(t_lst *start, t_config **input, int **map)
 		map = populate_map_row(start, input, map, row);
 		if (!map)
 			return (NULL);
-
 		start = start->next;
 		row++;
 	}
-
 	return (map);
 }
 
-int **create_map(t_lst *start, t_config **input)
+int	**create_map(t_lst *start, t_config **input)
 {
 	int	**map;
 
 	map = allocate_map_memory(input);
 	if (!map)
-		return NULL;
+		return (NULL);
 	map = populate_map(start, input, map);
 	if (!map || !verify_players(*input, map))
 	{

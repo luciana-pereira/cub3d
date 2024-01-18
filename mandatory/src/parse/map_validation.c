@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/13 22:44:09 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:20:19 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static int	is_valid_duplicate(t_map *map, int **duplicate)
 		while (x < map->x / 64)
 		{
 			pos = duplicate[y][x];
-			if (!((pos == 1 || pos == 0 || pos == 9) ||
-				(pos == 5 || pos == 6 || pos == 7 || pos == 8) ||
-				(pos == 3)))
+			if (!((pos == 1 || pos == 0 || pos == 9) || \
+				(pos == 5 || pos == 6 || pos == 7 || pos == 8) || \
+					(pos == 3)))
 				return (0);
 			x++;
 		}
@@ -36,18 +36,6 @@ static int	is_valid_duplicate(t_map *map, int **duplicate)
 	return (1);
 }
 
-/**
-** Verifica se o caminho fornecido no mapa é válido.
-** Utiliza a técnica de preenchimento por inundação (flood fill) para verificar se há um caminho válido.
-** Retorna 0 se o caminho for válido e exibe uma mensagem de erro caso contrário.
-** 
-* @param map: estrutura do mapa contendo informações relevantes.
-* @param x: coordenada x de início para o preenchimento por inundação.
-* @param y: coordenada y de início para o preenchimento por inundação.
-** 
-** Nota: Esta função utiliza a função copy_map para criar uma cópia temporária do mapa.
-**       Após a verificação, a memória alocada para a cópia é liberada.
-*/
 int	is_valid_map_path(t_map *map, int x, int y)
 {
 	int	**duplicate;
