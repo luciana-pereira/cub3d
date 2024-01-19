@@ -6,24 +6,12 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 15:20:27 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:12:08 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-/**
- * @brief Duplica o mapa fornecido, retornando uma cópia do mesmo.
- * Esta função aloca memória para o novo mapa duplicado e copia os valores do
- * mapa original.
- * 
- * @param map: Estrutura contendo as informações do mapa original.
- * 
- * @return Retorna um ponteiro para um novo mapa duplicado.
- * 
- * Nota: O usuário é responsável por liberar a memória alocada para o mapa 
- * duplicado quando não for mais necessário.
- */
 int	**copy_map(t_map *map)
 {
 	int	**duplicate;
@@ -65,7 +53,7 @@ static void	init_and_generate_map(int fd, t_config **input, t_map **map)
 	}
 	(*map)->y = (*input)->height * 64;
 	(*map)->x = (*input)->width * 64;
-	(*map)->plane = ((*map)->x / 2) / tan(FOV / 2);
+	(*map)->plane = ((float)(*map)->x / 2) / tan(FOV / 2);
 }
 
 void	load_map(t_config **input, t_map **map)

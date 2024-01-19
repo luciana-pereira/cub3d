@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 15:26:30 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/19 10:49:40 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ void	init_settings(t_config *input, char **argv)
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
-	{
 		print_error(strerror(errno));
-		return ;
-	}
 	input->fd = fd;
 }

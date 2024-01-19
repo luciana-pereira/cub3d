@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_processing.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:33:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/13 23:41:30 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/19 10:54:02 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static t_lst	*read_map_lines(int fd, t_lst *node)
 		node = node->next;
 		line = get_next_line(fd);
 	}
-	close(fd);
+	if (fd > 0)
+		close(fd);
 	return (start);
 }
 

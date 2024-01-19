@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 03:29:31 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/07 23:16:46 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/19 10:52:12 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ char	*get_next_line(int fd)
 	t_lst	*line;
 	size_t	index;
 
+	if (fd < 0)
+		return (NULL);
 	line = create_new_node();
 	start = line;
 	populate_list(fd, line);

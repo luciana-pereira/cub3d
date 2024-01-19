@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:47:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 15:19:41 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/19 10:55:22 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void	free_input(t_config *input)
 			free(input->tex.north_path);
 		if (input->tex.south)
 			free(input->tex.south_path);
-		close(input->fd);
+		if (input->fd > 0)
+			close(input->fd);
 		free(input);
 	}
 }

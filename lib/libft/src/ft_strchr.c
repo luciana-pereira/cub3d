@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 23:53:20 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/07 22:54:53 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:09:18 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,17 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	}
 	return ((char *)s);
+}
+int	ft_charcmp(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] != c)
+			return (1);
+		i++;
+	}
+	return (0);
 }
