@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:33:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/19 10:54:02 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:50:06 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static t_lst	*read_map_lines(int fd, t_lst *node)
 		node->next = new;
 		node = node->next;
 		line = get_next_line(fd);
+		if (line != NULL)
+			line[ft_strlen(line) - 1] = '\0';
 	}
 	if (fd > 0)
 		close(fd);
@@ -39,10 +41,12 @@ static int	**process_map_data(t_lst *start, t_config **input)
 {
 	int	**map;
 
+	map = NULL;
 	start = remove_empty(start);
 	if (verify_map(start, input, 1) == -1)
 		print_error(INVALID_MAP);
-	map = create_map(start, input);
+	else 
+		map = create_map(start, input);
 	if (map == NULL)
 		free_input((*input));
 	free_map_lines(start);

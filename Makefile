@@ -31,6 +31,7 @@ SRC_FILES		=	mandatory/src/events/key_events.c					\
 					mandatory/src/parse/map_allocation.c				\
 					mandatory/src/parse/map_operations.c				\
 					mandatory/src/parse/map_processing.c				\
+					mandatory/src/parse/map_normalize.c					\
 					mandatory/src/parse/map_valid_config.c	    		\
 					mandatory/src/parse/map_validation.c				\
 					mandatory/src/parse/map_verification.c				\

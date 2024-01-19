@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:04:30 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/18 17:25:57 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:38:37 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,19 @@ int		verify_line(char *str);
 t_lst	*remove_empty(t_lst *start);
 int		verify_xpm_file(char *path);
 int		verify_colors(t_config *input);
+int		verify_players(t_config *input);
 int		verify_textures(t_config *input);
 int		process_color(char **color, int *arg);
 int		**allocate_map_memory(t_config **input);
 void	load_map(t_config **input, t_map **map);
 int		read_and_process_file(t_config **input);
-int		verify_players(t_config *input);
 int		is_valid_map_path(t_map *map, int x, int y);
+int		map_normalizer(t_lst *map, t_config **input);
 int		**create_map(t_lst *start, t_config **input);
+int		map_checker(t_lst *prev, t_lst *map, int size);
 int		verify_all_elements(char *line, t_config *input);
 int		**read_map(int fd, t_config **input, t_lst *node);
+int		process_map_line(char *line_map, t_config **input);
 int		process_input(int argc, char **argv, t_config **input);
 int		verify_map(t_lst *map, t_config **input, int inside_map);
 int		get_element(char element, t_config **input, int x, int y);
