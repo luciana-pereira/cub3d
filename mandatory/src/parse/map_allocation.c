@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:27:06 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 17:25:04 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/22 09:03:34 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	**populate_map_row(t_lst *start, t_config **input, int **map, \
 	if (!map[row])
 		return (NULL);
 	col = -1;
-	while (++col < (*input)->width)
+	while (++col <= (*input)->width)
 	{
 		map[row][col] = allocate_and_get_element(input, start, row, col);
 		if (map[row][col] == -1)

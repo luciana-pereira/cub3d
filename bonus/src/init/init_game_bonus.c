@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 05:04:58 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:50:36 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 10:56:42 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 int	init_game(t_config *input, t_map **map, t_player **player)
 {
 	*map = NULL;
-	load_map(&input, map);
-	if (*map == NULL)
+	if(load_map(&input, map) == -1)
 		return (-1);
 	if ((*map)->map == NULL)
 	{

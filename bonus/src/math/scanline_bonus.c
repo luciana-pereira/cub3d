@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 22:39:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:46:18 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 10:08:29 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	scanline_fill(int **duplicate, int x, int y, t_map *map);
 
 static bool	is_visited(int cell_value)
 {
-	return (cell_value == 1 || cell_value == 3 || cell_value == 2);
+	return (cell_value == 1 || 
+	cell_value == 3 ||
+	cell_value == 2);
 }
 
 static void	fill_line_above(int **duplicate, int lr[2], int y, t_map *map)

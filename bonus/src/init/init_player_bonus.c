@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 05:04:58 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:52:39 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/22 11:00:24 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	start_player(t_player *player, int x, int y, int dir)
 {
-	player->x = x * 64;
-	player->y = y * 64;
+	player->x = (x * 64) + 32;
+	player->y = (y * 64) + 32;
 	player->dx = 0;
 	player->dy = 0;
 	player->angle = dir * M_PI / 2;

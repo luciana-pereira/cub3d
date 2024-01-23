@@ -68,6 +68,7 @@ SRC_FILES_BONUS	=	bonus/src/events/key_events_bonus.c				\
 					bonus/src/init/init_setup_bonus.c	        	\
 					bonus/src/math/calculate_bonus.c				\
 					bonus/src/math/calculate_diff_bonus.c			\
+					bonus/src/parse/map_normalize_bonus.c			\
 					bonus/src/math/math_oper_bonus.c				\
 					bonus/src/math/scanline_bonus.c					\
 					bonus/src/parse/colors_bonus.c					\

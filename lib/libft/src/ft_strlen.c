@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:28:57 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/19 15:12:12 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:15:05 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t ft_strlen(const char *str)
 	size_t index;
 
 	index = 0;
-	if (str[index] == '\0')
+	if (!str)
 		return (0);
 	while (str[index] != '\0')
 	{

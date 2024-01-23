@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:48:53 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 10:31:28 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	increment_position(t_map *map, t_rays ray, t_hit *hit, char direction)
 	hit->hit_y = hit->intercept[1];
 	while (hit->hit_x >= 0 && hit->hit_y < map->y && \
 		((hit->hit_x < map->x && hit->hit_y >= 0 && direction == 'v') \
-			|| (hit->hit_x <= map->x && hit->hit_y > 0 && direction == 'h')))
+			|| (hit->hit_x < map->x && hit->hit_y > 0 && direction == 'h')))
 	{
 		if (check_collision(map, ray, hit, direction))
 		{

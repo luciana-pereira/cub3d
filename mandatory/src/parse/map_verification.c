@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:54:42 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/19 17:52:51 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/22 09:00:58 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,14 @@ int	verify_map(t_lst *map, t_config **input, int inside_map)
 	t_lst *prev;
 
 	(void)inside_map;
-	prev = map;
+	prev = NULL;
 	if (map_normalizer(map, input) == -1)
 		return (-1);
 	while (map && map->content)
 	{
 		if(map_checker(prev, map, (*input)->width) == -1)
 			return (-1);
-		if (prev != map)
-			prev = prev->next;
+		prev = map;
 		map = map->next;
 	}
 	return (0);

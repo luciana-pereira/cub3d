@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:54:56 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/19 17:52:41 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/22 09:06:21 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	map_checker(t_lst *prev, t_lst *map, int size)
 									&& (map == prev\
 									|| map->next == NULL\
 									|| i == 0\
-									|| i == size - 1\
+									|| i == size\
 									|| map->content[i + 1] == ' '\
 									|| map->content[i - 1] == ' '\
 									|| prev->content[i] == ' '\

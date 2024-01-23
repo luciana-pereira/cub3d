@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:09:12 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 11:17:38 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,18 @@ void	free_map(t_map *map)
 	free(map->north);
 	free(map->south);
 	free(map->east);
+
 	free_2d_array(map->map, map->y / 64);
 	free(map);
 }
 
-void	free_map_lines(t_lst *map_line)
+void	free_map_lines(char **map)
 {
-	t_lst	*aux;
+	int	i;
 
-	if (!map_line)
-		return ;
-	while (map_line->next)
+	i = 0;
+	while (map[i])
 	{
-		aux = map_line;
-		map_line = map_line->next;
-		free(aux->content);
-		free(aux);
+		free(map[i]);
 	}
-	free(map_line->content);
-	free(map_line);
 }
