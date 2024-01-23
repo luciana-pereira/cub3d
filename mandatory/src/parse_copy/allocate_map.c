@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   allocate_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 17:53:33 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 13:02:41 by luizedua         ###   ########.fr       */
+/*   Created: 2024/01/18 16:20:18 by luizedua          #+#    #+#             */
+/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-void	free_map(t_map *map)
+int	**allocate_map_memory(t_config **input)
 {
-	free(map->west);
-	free(map->north);
-	free(map->south);
-	free(map->east);
-	free_2d_array(map->map, map->y / 64);
-	free(map);
+	int	**map;
+
+	map = NULL;
+	if ((*input)->height > 0)
+		map = (int **)malloc(sizeof(int *) * ((*input)->height + 1));
+	if(!map)
+		return(NULL);
+	return (map);
 }
-
-void	free_map_lines(char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
-	{
-		free(map[i]);
-	}
-}
-

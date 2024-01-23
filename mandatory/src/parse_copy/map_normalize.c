@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_normalize_bonus.c                              :+:      :+:    :+:   */
+/*   map_normalize.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:54:56 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/23 12:39:34 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3d_bonus.h"
+#include "../../includes/cub3d.h"
 #include <stdio.h>
 
 static int content_normalizer(char **content, int size)

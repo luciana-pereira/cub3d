@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_processing_bonus.c                             :+:      :+:    :+:   */
+/*   map_processing.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:33:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 12:47:04 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/cub3d_bonus.h"
+#include "../../includes/cub3d.h"
 
 static t_lst	*read_map_lines(int fd, t_lst *node)
 {

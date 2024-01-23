@@ -25,20 +25,20 @@ SRC_FILES		=	mandatory/src/events/key_events.c					\
 					mandatory/src/math/calculate.c						\
 					mandatory/src/math/scanline.c						\
 					mandatory/src/math/math_oper.c						\
-					mandatory/src/parse/colors.c						\
-					mandatory/src/parse/file_processing.c	     		\
-					mandatory/src/parse/allocate_map.c					\
-					mandatory/src/parse/map_allocation.c				\
-					mandatory/src/parse/map_operations.c				\
-					mandatory/src/parse/map_processing.c				\
-					mandatory/src/parse/map_normalize.c					\
-					mandatory/src/parse/map_valid_config.c	    		\
-					mandatory/src/parse/map_validation.c				\
-					mandatory/src/parse/map_verification.c				\
-					mandatory/src/parse/process_elements.c				\
-					mandatory/src/parse/process_input.c  				\
-					mandatory/src/parse/textures_validation.c			\
-					mandatory/src/parse/textures_obtaining.c			\
+					mandatory/src/parse_copy/colors.c						\
+					mandatory/src/parse_copy/file_processing.c	     		\
+					mandatory/src/parse_copy/allocate_map.c					\
+					mandatory/src/parse_copy/map_allocation.c				\
+					mandatory/src/parse_copy/map_operations.c				\
+					mandatory/src/parse_copy/map_processing.c				\
+					mandatory/src/parse_copy/map_normalize.c					\
+					mandatory/src/parse_copy/map_valid_config.c	    		\
+					mandatory/src/parse_copy/map_validation.c				\
+					mandatory/src/parse_copy/map_verification.c				\
+					mandatory/src/parse_copy/process_elements.c				\
+					mandatory/src/parse_copy/process_input.c  				\
+					mandatory/src/parse_copy/textures_validation.c			\
+					mandatory/src/parse_copy/textures_obtaining.c			\
 					mandatory/src/rays/ray_casting.c   					\
 					mandatory/src/rays/ray_intercept.c					\
 					mandatory/src/rays/ray_processing.c	 				\
