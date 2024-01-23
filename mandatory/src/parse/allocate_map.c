@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 15:33:05 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/18 15:34:19 by luizedua         ###   ########.fr       */
+/*   Created: 2024/01/18 16:20:18 by luizedua          #+#    #+#             */
+/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	**allocate_map_memory(t_config **input)
 
 	map = NULL;
 	if ((*input)->height > 0)
-		map = (int **)malloc(sizeof(int *) * (*input)->height);
+		map = (int **)malloc(sizeof(int *) * ((*input)->height + 1));
+	if(!map)
+		return(NULL);
 	return (map);
 }

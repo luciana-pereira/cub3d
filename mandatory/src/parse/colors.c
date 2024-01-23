@@ -6,27 +6,12 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:00:31 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 15:20:52 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:58:07 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-/**
- * @brief Verifica se as cores do teto e do chão foram definidas corretamente.
- *
- * Esta função verifica se as cores do teto e do chão foram especificadas 
- *corretamente
- * no arquivo de configuração do jogo. Se ambas as cores não foram definidas, 
- *a função
- * imprime uma mensagem de erro indicando que as cores são inválidas e retorna 
- *um código
- * de erro correspondente.
- *
- * @param input Ponteiro para a estrutura de configuração do jogo.
- * @return 0 se as cores estiverem definidas corretamente, caso contrário, um 
- *código de erro.
- */
 int	verify_colors(t_config *input)
 {
 	if (!input->ceiling)
@@ -58,13 +43,6 @@ static int	convert_rgb(char **color)
 	return (colors);
 }
 
-/**
-** Remove espaços em branco das extremidades de cada componente de uma cor.
-** 
-* @param color: vetor de strings representando as componentes de uma cor.
-** 
-** Retorna um novo vetor de strings com as cores ajustadas.
-*/
 static char	**remove_whitespaces_color(char **color)
 {
 	char	*temp;

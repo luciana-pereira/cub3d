@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/13 18:09:27 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 15:21:31 by luizedua         ###   ########.fr       */
+/*   Created: 2024/01/17 21:10:23 by lucperei          #+#    #+#             */
+/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	verify_textures(t_config *input)
 {
-	if (!input->tex.west || !input->tex.east
+	if (!input->tex.west || !input->tex.east \
 		|| !input->tex.north || !input->tex.south)
 		return (print_error(INVALID_TEX));
 	return (0);
@@ -49,7 +49,7 @@ int	has_texture(char *line, t_config *arg, char *texture, int *has_flag)
 			return (print_error(INVALID_TEX));
 		clean_line = remove_whitespaces(line + 2);
 		if (ft_strncmp(clean_line + (ft_strlen(clean_line) - 4), \
-															XPM_EXTENSION, 4))
+								XPM_EXTENSION, 4))
 		{
 			free(clean_line);
 			return (print_error(INVALID_TEX));

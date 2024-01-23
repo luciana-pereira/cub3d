@@ -6,12 +6,11 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:54:42 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/22 09:00:58 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
-#include <stdio.h>
 
 int	verify_players(t_config *input)
 {
@@ -50,20 +49,11 @@ int	process_map_line(char *line_map, t_config **input)
 	return (0);
 }
 
-int	verify_map(t_lst *map, t_config **input, int inside_map)
+int	verify_map(char **map, t_config **input)
 {
-	t_lst *prev;
-
-	(void)inside_map;
-	prev = NULL;
-	if (map_normalizer(map, input) == -1)
+	if (map_normalizer(&map, input) == -1)
 		return (-1);
-	while (map && map->content)
-	{
-		if(map_checker(prev, map, (*input)->width) == -1)
-			return (-1);
-		prev = map;
-		map = map->next;
-	}
+	if(map_checker(map) == -1)
+		return (-1);
 	return (0);
 }

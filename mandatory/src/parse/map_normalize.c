@@ -6,11 +6,12 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:54:56 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/22 09:06:21 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
+#include <stdio.h>
 
 static int content_normalizer(char **content, int size)
 {
@@ -21,7 +22,7 @@ static int content_normalizer(char **content, int size)
 	temp = malloc((size + 1) * sizeof(char));
 	if (!temp)
 		return (-1);
-	while ((*content)[i] != '\0')
+	while ((*content)[i] != '\0' && (*content)[i] != '\n')
 	{
 		temp[i] = (*content)[i];
 		i++;
@@ -37,45 +38,47 @@ static int content_normalizer(char **content, int size)
 	return (0);
 }
 
-int	map_normalizer(t_lst *map, t_config **input)
+int	map_normalizer(char ***map, t_config **input)
 {
-	t_lst *temp;
+	int	i;
 
-	temp = map;
-	while (temp && temp->content)
+	i = -1;
+	while ((*map)[++i] != NULL)
+		process_map_line((*map)[i], 
+	input);
+	i = -1;
+	while ((*map)[++i] != NULL)
 	{
-		process_map_line(temp->content, input);
-		temp = temp->next;
-	}
-	temp = map;
-	while (temp && temp->content)
-	{
-		if(ft_strlen(temp->content) != (*input)->width)
-			if(content_normalizer(&temp->content, (*input)->width) == -1)
+		if(ft_strlen((*map)[i]) != (*input)->width)
+			if(content_normalizer(&(*map)[i], (*input)->width) == -1)
 				return(-1);
-		temp = temp->next;
 	}
 	return (0);
 }
 
-int	map_checker(t_lst *prev, t_lst *map, int size)
+int	map_checker(char **map)
 {
-	int	i;
+	size_t	row;
+	size_t	col;
 
-	i = 0;
-	while (map->content[i] != '\0')
+	row = 0;
+	while (map[row])
 	{
-		if((map->content[i] == '0' || ft_strchr("NSWE", map->content[i]))\
-									&& (map == prev\
-									|| map->next == NULL\
-									|| i == 0\
-									|| i == size\
-									|| map->content[i + 1] == ' '\
-									|| map->content[i - 1] == ' '\
-									|| prev->content[i] == ' '\
-									|| map->next->content[i] == ' '))
-			return (-1);
-		i++;
+		col = 0;
+		while (map[row][col])
+		{
+			if ((map[row][col] == '0' || ft_strchr("NSEW", map[row][col])) \
+				&& ((row == 0 || !map[row + 1])
+					|| (col == 0)
+					|| !map[row][col + 1]
+					|| map[row][col + 1] == ' '
+					|| map[row][col - 1] == ' '
+					|| map[row + 1][col] == ' '
+					|| map[row - 1][col] == ' '))
+				return (-1);
+			col++;
+		}
+		row++;
 	}
-	return(0);
+	return (0);
 }

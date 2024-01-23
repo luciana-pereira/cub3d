@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:33:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/22 09:02:24 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/23 13:16:20 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,36 +29,73 @@ static t_lst	*read_map_lines(int fd, t_lst *node)
 		node->next = new;
 		node = node->next;
 		line = get_next_line(fd);
-		if (line != NULL)
-			line[ft_strlen(line) - 1] = '\0';
 	}
 	if (fd > 0)
 		close(fd);
 	return (start);
 }
 
-static int	**process_map_data(t_lst *start, t_config **input)
+static int	**process_map_data(char **map, t_config **input)
 {
-	int	**map;
+	int	**map_temp;
 
-	map = NULL;
-	start = remove_empty(start);
-	if (verify_map(start, input, 1) == -1)
+	map_temp = NULL;
+	if (verify_map(map, input) == -1)
 		print_error(INVALID_MAP);
 	else 
-		map = create_map(start, input);
-	if (map == NULL)
+		map_temp = create_map(map, input);
+	if (map_temp == NULL)
 		free_input((*input));
-	free_map_lines(start);
+	free_array(map);
+	return (map_temp);
+}
+
+static void	free_lst(t_lst *map_line)
+{
+	t_lst	*aux;
+
+	if (!map_line)
+		return ;
+	while (map_line->next)
+	{
+		aux = map_line;
+		map_line = map_line->next;
+		free(aux->content);
+		free(aux);
+	}
+	free(map_line->content);
+	free(map_line);
+}
+
+static char **lst_to_arr(t_lst *lst)
+{
+	int		i;
+	int		size;
+	t_lst	*head;
+	char	**map;
+
+	i = 0;
+	head = lst;
+	size = ft_lstsize(lst);
+	map = malloc(sizeof(char *) * (size + 1));
+	while (i < size)
+	{
+		map[i] = ft_strdup(lst->content);
+		lst = lst->next;
+		i++;
+	}
+	free_lst(head);
 	return (map);
 }
 
-int	**read_map(int fd, t_config **input, t_lst *node)
+int	**read_map(int fd, t_config **input)
 {
-	t_lst	*start;
+	t_lst	*new;
 	int		**map;
+	char	**map_temp;
 
-	start = read_map_lines(fd, node);
-	map = process_map_data(start, input);
+	new = malloc(sizeof(t_lst));
+	map_temp = lst_to_arr(remove_empty(read_map_lines(fd, new)));
+	map = process_map_data(map_temp, input);
 	return (map);
 }
