@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:15:47 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/24 13:33:21 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:00:51 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	is_space(int c)
 {
-	return (c == '\t' || c == '\v' || c == '\f' || c == '\r' || c == ' ' || 
+	return (c == '\t' || c == '\v' || c == '\f' || c == '\r' || c == ' ' || \
 		c == '\n');
-	
 }
+
 char	*trim_end_space(char *str)
 {
 	int	start;

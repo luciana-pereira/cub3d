@@ -6,14 +6,14 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:54:42 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 14:24:39 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:05:10 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 #include <stdio.h>
 
-void print_matrix(char **matrix);
+void	print_matrix(char **matrix);
 
 int	verify_players(t_config *input)
 {
@@ -55,15 +55,15 @@ int	process_map_line(char *line_map, t_config **input)
 int	verify_map(char **map, t_config **input)
 {
 	if (!map)
-		return(-1);
+		return (-1);
 	if (map_normalizer(&map, input) == -1)
 		return (-1);
-	if(map_checker(map) == -1)
+	if (map_checker(map) == -1)
 		return (-1);
 	return (0);
 }
 
-void print_matrix(char **matrix)
+void	print_matrix(char **matrix)
 {
 	int	i;
 	int	j;

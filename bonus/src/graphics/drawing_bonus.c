@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 09:58:36 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:07:32 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	print_map(t_config *input, int **map)
 
 	row = 0;
 	if (!map)
-		return;
+		return ;
 	while (row < input->height)
 	{
 		col = 0;

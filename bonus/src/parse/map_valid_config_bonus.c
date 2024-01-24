@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 09:50:57 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:08:56 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	verify_line(char *line)
 int	verify_coords_elements(t_map *map, float x, float y, int flag)
 {
 	if (x < 0 || x > (float)map->x || y < 0 || y > (float)map->y)
-		return (1); 
+		return (1);
 	if (map->map[(int)floor(y / 64)][(int)floor(x / 64)] == flag)
 		return (1);
 	return (0);

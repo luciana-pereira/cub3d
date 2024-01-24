@@ -6,14 +6,14 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:54:56 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/24 14:56:21 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:07:17 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 #include <stdio.h>
 
-static int content_normalizer(char **content, int size)
+static int	content_normalizer(char **content, int size)
 {
 	char	*temp;
 	int		i;
@@ -44,14 +44,13 @@ int	map_normalizer(char ***map, t_config **input)
 
 	i = -1;
 	while ((*map)[++i] != NULL)
-		process_map_line((*map)[i], 
-	input);
+		process_map_line((*map)[i], input);
 	i = -1;
 	while ((*map)[++i] != NULL)
 	{
-		if(ft_strlen((*map)[i]) != (*input)->width)
-			if(content_normalizer(&(*map)[i], (*input)->width) == -1)
-				return(-1);
+		if (ft_strlen((*map)[i]) != (*input)->width)
+			if (content_normalizer(&(*map)[i], (*input)->width) == -1)
+				return (-1);
 	}
 	return (0);
 }
@@ -90,7 +89,7 @@ static bool	is_only_space(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if(is_space(str[i]) == true)
+		if (is_space(str[i]) == true)
 			i++;
 		else if (str[i] != '\0')
 			return (false);

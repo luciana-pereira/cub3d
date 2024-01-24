@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:52:37 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 10:16:38 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:06:23 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ void	init_graph_env(t_map *map, t_player *player)
 	game->num_rays = WIN_W;
 	game->rays = ray;
 	game->mouse = 1;
-	// print_map(game->map, game->map->map);
 	mlx_hooks(game);
 }

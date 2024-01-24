@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 09:59:47 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:06:06 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,14 @@ int	**copy_map(t_map *map)
 	int	y;
 
 	y = 0;
-	duplicate = malloc(sizeof(int *) * ( map->y / 64));
+	duplicate = malloc(sizeof(int *) * (map->y / 64));
 	while (y < map->y / 64)
 	{
 		x = 0;
 		duplicate[y] = malloc(sizeof(int) * (map->x / 64));
 		while (x < map->x / 64 && map->map[y] != NULL)
 		{
-			duplicate[y][x] = 
-			map->map[y][x];
+			duplicate[y][x] = map->map[y][x];
 			x++;
 		}
 		y++;
@@ -64,7 +63,7 @@ int	load_map(t_config **input, t_map **map)
 		return (-1);
 	}
 	init_and_generate_map((*input)->fd, input, map);
-	if(*map == NULL)
+	if (*map == NULL)
 	{
 		map = NULL;
 		return (-1);

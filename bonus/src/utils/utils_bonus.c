@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:56:45 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 14:45:27 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:00:10 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ t_lst	*remove_empty(t_lst *start)
 
 	temp = start;
 	line = NULL;
-	if(!start || !start->content)
-		return(NULL);
+	if (!start || !start->content)
+		return (NULL);
 	while (start)
 	{
 		line = remove_whitespaces(start->content, 0);

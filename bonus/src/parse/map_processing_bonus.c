@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:33:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 14:44:06 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:03:03 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,11 @@ static t_lst	*read_map_lines(int fd, t_lst *node)
 		new->content = NULL;
 		node->next = new;
 		node = node->next;
-
 		if (check_line(line) >= 0)
 			line = get_next_line(fd);
 		else
 		{
-			if(fd > 0)
+			if (fd > 0)
 				close(fd);
 			free_lst(head);
 			return (NULL);
@@ -61,11 +60,11 @@ static int	**process_map_data(char **map, t_config **input)
 	map_temp = NULL;
 	if (verify_map(map, input) == -1)
 		print_error(INVALID_MAP);
-	else 
+	else
 		map_temp = create_map(map, input);
 	if (map_temp == NULL)
 		free_input((*input));
-	if(map)
+	if (map)
 		free_array(map);
 	print_map(*input, map_temp);
 	return (map_temp);
@@ -88,7 +87,7 @@ static void	free_lst(t_lst *map_line)
 	free(map_line);
 }
 
-static char **lst_to_arr(t_lst *lst)
+static char	**lst_to_arr(t_lst *lst)
 {
 	int		i;
 	int		size;
@@ -123,7 +122,6 @@ int	**read_map(int fd, t_config **input)
 	new = malloc(sizeof(t_lst));
 	new->content = NULL;
 	new->next = NULL;
-
 	map_temp = lst_to_arr(remove_empty(read_map_lines(fd, new)));
 	map = process_map_data(map_temp, input);
 	return (map);

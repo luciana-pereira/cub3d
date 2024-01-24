@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:50:52 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 11:18:05 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 15:05:10 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static int	matrix_len(char **matrix)
 	int	i;
 
 	i = 0;
-	if(!matrix)
-		return(0);
-	while(matrix[i])
+	if (!matrix)
+		return (0);
+	while (matrix[i])
 		i++;
 	return (i);
 }
