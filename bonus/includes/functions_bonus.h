@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:06:05 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/24 10:58:36 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:13:08 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	scanline_flood_fill(int **duplicate, int x, int y, t_map *map);
 int		*calculate_diff(t_coords a, t_coords b);
 // | Parse
 int		**copy_map(t_map *map);
+int		check_line(char *line);
 int		verify_line(char *str);
 t_lst	*remove_empty(t_lst *start);
 int		verify_xpm_file(char *path);
@@ -96,6 +97,8 @@ void	increment_position(t_map *map, t_rays ray, t_hit *hit, char direction);
 void	calculate_intercept(t_player *player, t_rays ray, t_hit *hit, char dir);
 
 // | Utils
+int		is_space(int c);
+char	*trim_end_space(char *str);
 void	free_game(t_game *game);
 int		close_win(t_game *game);
 void	free_array(char **array);

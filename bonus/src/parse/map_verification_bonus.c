@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:54:42 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 10:57:43 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:24:39 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	process_map_line(char *line_map, t_config **input)
 
 int	verify_map(char **map, t_config **input)
 {
+	if (!map)
+		return(-1);
 	if (map_normalizer(&map, input) == -1)
 		return (-1);
 	if(map_checker(map) == -1)

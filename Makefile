@@ -92,6 +92,7 @@ SRC_FILES_BONUS	=	bonus/src/events/key_events_bonus.c				\
 					bonus/src/utils/free_map_bonus.c	    		\
 					bonus/src/utils/free_struct_bonus.c	 			\
 					bonus/src/utils/utils_bonus.c	    			\
+					bonus/src/utils/is_space.c		    			\
 					bonus/src/main_bonus.c							\
 
 CC = cc

@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:54:56 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/24 12:07:50 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 14:56:21 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,37 @@ int	map_checker(char **map)
 		row++;
 	}
 	return (0);
+}
+
+static bool	is_only_space(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if(is_space(str[i]) == true)
+			i++;
+		else if (str[i] != '\0')
+			return (false);
+	}
+	return (true);
+}
+
+int	check_line(char *line)
+{
+	static int	map_lines = 0;
+	static bool	map_start = false;
+
+	if (line[0] != '\n')
+	{
+		if (map_start == 1)
+			return (-1);
+		if (is_only_space(line))
+			return (-1);
+		map_lines++;
+	}
+	else if (line[0] == '\n' && map_lines > 0)
+		map_start = 1;
+	return (map_lines);
 }
