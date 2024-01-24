@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:00:31 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:13:09 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:24:26 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ int	verify_colors(t_config *input)
 	return (0);
 }
 
-static void	is_valid_color(int red, int green, int blue)
+static int	is_valid_color(int red, int green, int blue)
 {
 	if ((red < 0 || red > 255) || (blue < 0 || blue > 255)
 		|| (green < 0 || green > 255))
-		print_error(INVALID_RGBD_COLOR);
+		return (print_error(INVALID_RGB_COLOR));
+	return (0);
 }
 
 static int	convert_rgb(char **color)
@@ -38,7 +39,8 @@ static int	convert_rgb(char **color)
 	red = ft_atoi(color[0]);
 	green = ft_atoi(color[1]);
 	blue = ft_atoi(color[2]);
-	is_valid_color(red, green, blue);
+	if (is_valid_color(red, green, blue) == -1)
+		return (-1);
 	colors = RGB_RED * red + RGB_GREEN * green + RGB_BLUE * blue;
 	return (colors);
 }
@@ -51,7 +53,7 @@ static char	**remove_whitespaces_color(char **color)
 	index = 0;
 	while (index < 3)
 	{
-		temp = remove_whitespaces(color[index]);
+		temp = remove_whitespaces(color[index], 0);
 		free(color[index]);
 		color[index] = temp;
 		index++;

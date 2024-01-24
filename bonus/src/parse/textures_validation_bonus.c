@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:10:23 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:25:29 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:55:51 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,12 @@ int	has_texture(char *line, t_config *arg, char *texture, int *has_flag)
 	char	*clean_line;
 	int		fd;
 
+	fd = -1;
 	if (!ft_strncmp(line, texture, 3))
 	{
 		if (*has_flag)
 			return (print_error(INVALID_TEX));
-		clean_line = remove_whitespaces(line + 2);
+		clean_line = remove_whitespaces(line + 2, 0);
 		if (ft_strncmp(clean_line + (ft_strlen(clean_line) - 4), \
 								XPM_EXTENSION, 4))
 		{
@@ -59,7 +60,8 @@ int	has_texture(char *line, t_config *arg, char *texture, int *has_flag)
 		free(clean_line);
 		if (fd < 0)
 			return (print_error(INVALID_TEX));
-		close(fd);
+		if (fd > 0)
+			close(fd);
 	}
 	return (0);
 }

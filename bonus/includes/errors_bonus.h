@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:08:38 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/18 16:08:41 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:22:44 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define INVALID_TEX "Invalid texture file"
 # define INVALID_PATH "Invalid provided path"
 # define INVALID_ELEMENT "Invalid inserted element\n"
-# define INVALID_RGBD_COLOR "Invalid RGBD color"
+# define INVALID_RGB_COLOR "Invalid RGB color"
 # define NO_MAP "There is no map in the file"
 # define EMPTY_FILE "File is empty"
 # define EXIT_THE_GAME "Exiting the game successfully\n"

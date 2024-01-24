@@ -6,11 +6,12 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:33:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 13:17:46 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:04:10 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
+#include <stdio.h>
 
 static t_lst	*read_map_lines(int fd, t_lst *node)
 {
@@ -47,6 +48,7 @@ static int	**process_map_data(char **map, t_config **input)
 	if (map_temp == NULL)
 		free_input((*input));
 	free_array(map);
+	print_map(*input, map_temp);
 	return (map_temp);
 }
 
@@ -76,15 +78,15 @@ static char **lst_to_arr(t_lst *lst)
 
 	i = 0;
 	head = lst;
-	size = ft_lstsize(lst);
+	size = ft_lstsize(head);
 	map = malloc(sizeof(char *) * (size + 1));
 	while (i < size)
 	{
-		map[i] = ft_strdup(lst->content);
-		lst = lst->next;
+		map[i] = ft_strdup(head->content);
+		head = head->next;
 		i++;
 	}
-	free_lst(head);
+	free_lst(lst);
 	return (map);
 }
 

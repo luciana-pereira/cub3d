@@ -6,24 +6,24 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:14:18 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 11:54:59 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
 
-static void	process_file_lines(t_config **input, char *line)
+static int	process_file_lines(t_config **input, char *line)
 {
 	char	*current_line;
 
 	while (line)
 	{
-		current_line = remove_whitespaces(line);
+		current_line = remove_whitespaces(line, 0);
 		free(line);
 		if (!verify_all_elements(current_line, *input))
 		{
 			free(current_line);
-			return ;
+			return (-1);
 		}
 		free(current_line);
 		if ((*input)->tex.north && (*input)->tex.south
@@ -34,6 +34,7 @@ static void	process_file_lines(t_config **input, char *line)
 		}
 		line = get_next_line((*input)->fd);
 	}
+	return (0);
 }
 
 int	read_and_process_file(t_config **input)
@@ -46,7 +47,8 @@ int	read_and_process_file(t_config **input)
 		print_error(EMPTY_FILE);
 		return (0);
 	}
-	process_file_lines(input, line);
+	if (process_file_lines(input, line) == -1)
+		return (0);
 	return (1);
 }
 
@@ -59,7 +61,8 @@ int	verify_xpm_file(char *path)
 	line = get_next_line(fd);
 	if (line == NULL || ft_strncmp(line, "/* XPM */", 9))
 	{
-		close (fd);
+		if (fd > 0)
+			close (fd);
 		return (-1);
 	}
 	free(line);

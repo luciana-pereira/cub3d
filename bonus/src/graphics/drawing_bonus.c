@@ -6,11 +6,12 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 10:15:03 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 09:58:36 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
+#include <stdio.h>
 
 void	paint_img(t_image *image, int x, int y, int color)
 {
@@ -22,23 +23,23 @@ void	paint_img(t_image *image, int x, int y, int color)
 	*(unsigned int *)dest = color;
 }
 
-void	print_map(t_map *map, int **map_matrix)
+void	print_map(t_config *input, int **map)
 {
-	int		row;
-	int		col;
-	char	code_to_char;
+	size_t	row;
+	size_t	col;
 
 	row = 0;
-	while (row < (int)map->y / 64)
+	if (!map)
+		return;
+	while (row < input->height)
 	{
 		col = 0;
-		while (col < (int)map->x / 64)
+		while (col < input->width)
 		{
-			code_to_char = map_matrix[row][col] + '0';
-			write(1, &code_to_char, 1);
+			printf("%i", map[row][col]);
 			col++;
 		}
-		write(1, "\n", 1);
+		printf("\n");
 		row++;
 	}
 }

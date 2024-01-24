@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 10:38:01 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 09:50:57 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	get_element(char element, t_config **input, int x, int y)
 	if (element == SOUTH || element == NORTH || \
 		element == WEST || element == EAST || element == '0')
 		return (handle_valid_element(element, input, x, y));
-	if (element == ' ' || element == '\n')
+	if (element == ' ')
 		return (EMPTY);
 	print_error(INVALID_CHARAC);
 	return (-1);

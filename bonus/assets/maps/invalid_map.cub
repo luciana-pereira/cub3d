@@ -3,11 +3,16 @@ SO ./bonus/assets/textures/south.xpm
 WE ./bonus/assets/textures/west.xpm
 EA ./bonus/assets/textures/east.xpm
 
-F 64,64,64,0
-C 128,128,128,0
+F 64,64,64
+C 128,128,128
 
-11111
-100100
-101001
-1100N1
-111111
+
+     1
+
+
+1111111111111
+1000000000001
+100000N000001
+1000000000001
+1111111111111
+111111 111111

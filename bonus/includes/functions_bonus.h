@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:06:05 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/23 13:00:50 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/24 10:58:36 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		mouse_click(int click, int x, int y, void *g);
 // | Graphics
 int		render_frame(t_game *game);
 void	load_textures(t_game *game);
-void	print_map(t_map *map, int **map_matrix);
+void	print_map(t_config *input, int **map_matrix);
 void	paint_img(t_image *image, int x, int y, int color);
 void	draw_wall(t_game *game, int x, int top_pixel, int bot_pixel);
 
@@ -101,7 +101,7 @@ int		close_win(t_game *game);
 void	free_array(char **array);
 void	free_input(t_config *input);
 int		is_numeric(const char *str);
-char	*remove_whitespaces(const char *str);
+char	*remove_whitespaces(const char *str, int flag);
 
 int		print_error(char *message);
 void	exit_with_error(char *str, t_game *game);
