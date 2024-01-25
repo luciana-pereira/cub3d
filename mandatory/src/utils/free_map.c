@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:53:33 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 13:02:41 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:09:26 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ void	free_map_lines(char **map)
 		free(map[i]);
 	}
 }
-

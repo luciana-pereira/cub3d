@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 03:29:31 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/19 10:52:12 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:21:32 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static char	read_line(int fd)
 	return (0);
 }
 
-static void populate_list(int fd, t_lst *node)
+static void	populate_list(int fd, t_lst *node)
 {
 	size_t	index;
 	char	current_char;

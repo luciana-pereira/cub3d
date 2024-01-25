@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_normalize.c                                    :+:      :+:    :+:   */
+/*   map_normalize_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 16:54:56 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:07:27 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 #include <stdio.h>
 
-static int content_normalizer(char **content, int size)
+static int	content_normalizer(char **content, int size)
 {
 	char	*temp;
 	int		i;
@@ -44,14 +44,13 @@ int	map_normalizer(char ***map, t_config **input)
 
 	i = -1;
 	while ((*map)[++i] != NULL)
-		process_map_line((*map)[i], 
-	input);
+		process_map_line((*map)[i], input);
 	i = -1;
 	while ((*map)[++i] != NULL)
 	{
-		if(ft_strlen((*map)[i]) != (*input)->width)
-			if(content_normalizer(&(*map)[i], (*input)->width) == -1)
-				return(-1);
+		if (ft_strlen((*map)[i]) != (*input)->width)
+			if (content_normalizer(&(*map)[i], (*input)->width) == -1)
+				return (-1);
 	}
 	return (0);
 }
@@ -81,4 +80,37 @@ int	map_checker(char **map)
 		row++;
 	}
 	return (0);
+}
+
+static bool	is_only_space(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (is_space(str[i]) == true)
+			i++;
+		else if (str[i] != '\0')
+			return (false);
+	}
+	return (true);
+}
+
+int	check_line(char *line)
+{
+	static int	map_lines = 0;
+	static bool	map_start = false;
+
+	if (line[0] != '\n')
+	{
+		if (map_start == 1)
+			return (-1);
+		if (is_only_space(line))
+			return (-1);
+		map_lines++;
+	}
+	else if (line[0] == '\n' && map_lines > 0)
+		map_start = 1;
+	return (map_lines);
 }

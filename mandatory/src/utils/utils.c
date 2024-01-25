@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 19:21:16 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/13 23:41:38 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:09:53 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,17 @@ t_lst	*remove_empty(t_lst *start)
 	char	*line;
 
 	temp = start;
+	line = NULL;
+	if (!start || !start->content)
+		return (NULL);
 	while (start)
 	{
-		line = remove_whitespaces(start->content);
+		line = remove_whitespaces(start->content, 0);
 		if (!line)
-			free_and_print_error(start);
+		{
+			print_error(NO_MAP);
+			break ;
+		}
 		if (line[0] != 0)
 			break ;
 		temp = start->next;
@@ -51,12 +57,14 @@ t_lst	*remove_empty(t_lst *start)
 	return (start);
 }
 
-char	*remove_whitespaces(const char *str)
+char	*remove_whitespaces(const char *str, int flag)
 {
 	char	*whitespaces;
 	char	*trimmed;
 
 	whitespaces = "\t\v\f\r\n ";
 	trimmed = ft_strtrim(str, whitespaces);
+	if (flag != 0)
+		free((void *)str);
 	return (trimmed);
 }

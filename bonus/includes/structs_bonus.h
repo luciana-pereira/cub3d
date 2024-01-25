@@ -6,12 +6,13 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 16:05:58 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:03:45 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_BONUS_H
 # define STRUCTS_BONUS_H
+# include <stddef.h>
 
 typedef struct s_coords
 {

@@ -6,50 +6,40 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:33:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 15:03:03 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:37:25 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d_bonus.h"
-#include <stdio.h>
 
 static void	free_lst(t_lst *map_line);
 
 static t_lst	*read_map_lines(int fd, t_lst *node)
 {
-	char	*line;
-	t_lst	*head;
-	t_lst	*new;
-	int		map_lines;
+	char		*line;
+	t_lst		*head;
+	t_lst		*new;
 
-	head = node;
-	map_lines = 0;
+	head = NULL;
 	line = get_next_line(fd);
-	if (!line)
-	{
-		free(head);
-		head = NULL;
-	}
-	while (line && map_lines >= 0)
+	head = if_no_line(line, head, node);
+	while (line)
 	{
 		node->content = trim_end_space(line);
 		new = (t_lst *)malloc(sizeof(t_lst));
-		new->next = NULL;
-		new->content = NULL;
+		init_new(&new);
 		node->next = new;
 		node = node->next;
 		if (check_line(line) >= 0)
 			line = get_next_line(fd);
 		else
 		{
-			if (fd > 0)
-				close(fd);
+			close_fd(fd);
 			free_lst(head);
 			return (NULL);
 		}
 	}
-	if (fd > 0)
-		close(fd);
+	close_fd(fd);
 	return (head);
 }
 
@@ -66,7 +56,6 @@ static int	**process_map_data(char **map, t_config **input)
 		free_input((*input));
 	if (map)
 		free_array(map);
-	print_map(*input, map_temp);
 	return (map_temp);
 }
 

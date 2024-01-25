@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 13:16:21 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/18 15:22:23 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:12:56 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ void	paint_img(t_image *image, int x, int y, int color)
 	*(unsigned int *)dest = color;
 }
 
-void	print_map(t_map *map, int **map_matrix)
+void	print_map(t_config *input, int **map_matrix)
 {
 	int		row;
 	int		col;
 	char	code_to_char;
 
 	row = 0;
-	while (row < (int)map->y / 64)
+	while (row < (int)input->height / 64)
 	{
 		col = 0;
-		while (col < (int)map->x / 64)
+		while (col < (int)input->width / 64)
 		{
 			code_to_char = map_matrix[row][col] + '0';
 			write(1, &code_to_char, 1);

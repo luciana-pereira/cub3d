@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:25:10 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/07 23:01:14 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:20:56 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	size_t	i;
 	size_t	end;
-	size_t 	size;
+	size_t	size;
 
 	if (!s)
 		return (NULL);

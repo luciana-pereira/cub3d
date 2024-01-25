@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:04:30 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/23 13:00:43 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:12:39 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	move_player(t_game *game, int walk, int camera_control);
 // | Graphics
 int		render_frame(t_game *game);
 void	load_textures(t_game *game);
-void	print_map(t_map *map, int **map_matrix);
+void	print_map(t_config *input, int **map_matrix);
 void	paint_img(t_image *image, int x, int y, int color);
 void	draw_wall(t_game *game, int x, int top_pixel, int bot_pixel);
 
@@ -45,6 +45,10 @@ int		calculate_position(t_game *game, int col, int control);
 void	scanline_flood_fill(int **duplicate, int x, int y, t_map *map);
 
 // | Parse
+void	close_fd(int fd);
+int		check_line(char *line);
+t_lst	*if_no_line(char *line, t_lst *head, t_lst *node);
+void	init_new(t_lst **newl);
 int		**copy_map(t_map *map);
 int		verify_line(char *str);
 t_lst	*remove_empty(t_lst *start);
@@ -87,7 +91,9 @@ int		close_win(t_game *game);
 void	free_array(char **array);
 void	free_input(t_config *input);
 int		is_numeric(const char *str);
-char	*remove_whitespaces(const char *str);
+char	*remove_whitespaces(const char *str, int flag);
+int		is_space(int c);
+char	*trim_end_space(char *str);
 
 int		print_error(char *message);
 void	exit_with_error(char *str, t_game *game);

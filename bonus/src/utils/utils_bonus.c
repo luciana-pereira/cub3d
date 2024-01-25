@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:56:45 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/24 15:00:10 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:06:11 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ t_lst	*remove_empty(t_lst *start)
 	{
 		line = remove_whitespaces(start->content, 0);
 		if (!line)
-			free_and_print_error(start);
+		{
+			print_error(NO_MAP);
+			break ;
+		}
 		if (line[0] != 0)
 			break ;
 		temp = start->next;

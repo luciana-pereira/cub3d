@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 16:06:05 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/24 14:13:08 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:57:10 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FUNCTIONS_BONUS_H
 
 # include "structs_bonus.h"
+# include "../../lib/libft/libft.h"
 
 // | Events
 int		key_press(int key, t_game *game);
@@ -61,12 +62,18 @@ int		*calculate_diff(t_coords a, t_coords b);
 // | Parse
 int		**copy_map(t_map *map);
 int		check_line(char *line);
+void	close_fd(int fd);
 int		verify_line(char *str);
 t_lst	*remove_empty(t_lst *start);
 int		verify_xpm_file(char *path);
 int		verify_colors(t_config *input);
 int		verify_players(t_config *input);
 int		verify_textures(t_config *input);
+t_lst	*if_no_line(char *line, t_lst *head, t_lst *node);
+void	init_new(t_lst **newl);
+
+// void	if_no_line(char *line, t_lst **head);
+// void	if_no_line(char *line, t_lst *head);
 int		process_color(char **color, int *arg);
 int		**allocate_map_memory(t_config **input);
 int		load_map(t_config **input, t_map **map);

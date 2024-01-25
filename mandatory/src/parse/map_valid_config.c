@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_valid_config.c                                 :+:      :+:    :+:   */
+/*   map_valid_config_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:07:27 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	get_element(char element, t_config **input, int x, int y)
 	if (element == SOUTH || element == NORTH || \
 		element == WEST || element == EAST || element == '0')
 		return (handle_valid_element(element, input, x, y));
-	if (element == ' ' || element == '\n')
+	if (element == ' ')
 		return (EMPTY);
 	print_error(INVALID_CHARAC);
 	return (-1);
@@ -62,7 +62,7 @@ int	verify_line(char *line)
 int	verify_coords_elements(t_map *map, float x, float y, int flag)
 {
 	if (x < 0 || x > (float)map->x || y < 0 || y > (float)map->y)
-		return (1); 
+		return (1);
 	if (map->map[(int)floor(y / 64)][(int)floor(x / 64)] == flag)
 		return (1);
 	return (0);

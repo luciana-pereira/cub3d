@@ -1,16 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   process_elements.c                                 :+:      :+:    :+:   */
+/*   process_elements_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:50:52 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:07:27 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
+
+static int	matrix_len(char **matrix)
+{
+	int	i;
+
+	i = 0;
+	if (!matrix)
+		return (0);
+	while (matrix[i])
+		i++;
+	return (i);
+}
 
 static int	process_element(char *line, int *flag, char *element, int *arg)
 {
@@ -22,7 +34,7 @@ static int	process_element(char *line, int *flag, char *element, int *arg)
 			return (print_error(INVALID_ELEMENT));
 		*flag = 1;
 		color = ft_split(line + 1, ',');
-		if (!(color[0]) || !(color[1]) || !(color[2]))
+		if (matrix_len(color) != 3 || !(color[0]) || !(color[1]) || !(color[2]))
 		{
 			free_array(color);
 			return (print_error(INVALID_ELEMENT_COLOR));

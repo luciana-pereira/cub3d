@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_allocation.c                                   :+:      :+:    :+:   */
+/*   map_allocation_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 16:27:06 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:07:27 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	*populate_map_row(char **map, t_config **input, int *int_map, \
 {
 	size_t	col;
 
-	int_map  = allocate_map_row(input);
+	int_map = allocate_map_row(input);
 	if (!int_map)
 		return (NULL);
 	col = -1;
@@ -59,13 +59,12 @@ static int	*populate_map_row(char **map, t_config **input, int *int_map, \
 
 static int	**populate_map(char **map, t_config **input)
 {
-	int	**int_map;
+	int		**int_map;
 	size_t	row;
-
 
 	row = 0;
 	int_map = allocate_map_memory(input);
-	if(!int_map)
+	if (!int_map)
 		return (NULL);
 	while (row < (*input)->height)
 	{
@@ -82,7 +81,8 @@ static int	**populate_map(char **map, t_config **input)
 
 int	**create_map(char **map, t_config **input)
 {
-	int **int_map;
+	int	**int_map;
+
 	int_map = populate_map(map, input);
 	if (!int_map || !verify_players(*input))
 	{

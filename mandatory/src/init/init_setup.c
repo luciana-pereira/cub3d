@@ -6,14 +6,14 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/19 10:49:40 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:10:13 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
 void	init_structure(t_config *input)
-{	
+{
 	input->px = 0;
 	input->py = 0;
 	input->player = 0;

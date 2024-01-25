@@ -29,6 +29,7 @@ SRC_FILES		=	mandatory/src/events/key_events.c					\
 					mandatory/src/parse/file_processing.c	     		\
 					mandatory/src/parse/allocate_map.c					\
 					mandatory/src/parse/map_allocation.c				\
+					mandatory/src/parse/map_utils.c						\
 					mandatory/src/parse/map_operations.c				\
 					mandatory/src/parse/map_processing.c				\
 					mandatory/src/parse/map_normalize.c					\
@@ -47,6 +48,7 @@ SRC_FILES		=	mandatory/src/events/key_events.c					\
 					mandatory/src/utils/free_map.c	    				\
 					mandatory/src/utils/free_struct.c	 				\
 					mandatory/src/utils/utils.c	    				    \
+					mandatory/src/utils/is_space.c  				    \
 					mandatory/src/main.c								\
 
 SRC_FILES_BONUS	=	bonus/src/events/key_events_bonus.c				\
@@ -83,6 +85,7 @@ SRC_FILES_BONUS	=	bonus/src/events/key_events_bonus.c				\
 					bonus/src/parse/process_elements_bonus.c		\
 					bonus/src/parse/process_input_bonus.c  			\
 					bonus/src/parse/textures_obtaining_bonus.c		\
+					bonus/src/parse/map_utils_bonus.c  				\
 					bonus/src/parse/textures_validation_bonus.c		\
 					bonus/src/rays/ray_casting_bonus.c   			\
 					bonus/src/rays/ray_intercept_bonus.c			\

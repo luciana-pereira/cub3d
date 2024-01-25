@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_verification.c                                 :+:      :+:    :+:   */
+/*   map_verification_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:54:42 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/23 12:56:16 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:07:27 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
+#include <stdio.h>
+
+void	print_matrix(char **matrix);
 
 int	verify_players(t_config *input)
 {
@@ -51,9 +54,31 @@ int	process_map_line(char *line_map, t_config **input)
 
 int	verify_map(char **map, t_config **input)
 {
+	if (!map)
+		return (-1);
 	if (map_normalizer(&map, input) == -1)
 		return (-1);
-	if(map_checker(map) == -1)
+	if (map_checker(map) == -1)
 		return (-1);
 	return (0);
+}
+
+void	print_matrix(char **matrix)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (matrix[i] != NULL)
+	{
+		j = 0;
+		printf("%s\n", matrix[i]);
+		while (matrix[i][j] != '\0')
+		{
+			printf("%i ", matrix[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
 }
