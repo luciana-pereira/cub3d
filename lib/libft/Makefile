@@ -6,42 +6,48 @@
 #    By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 02:19:07 by lucperei          #+#    #+#              #
-#    Updated: 2023/12/09 15:31:01 by lucperei         ###   ########.fr        #
+#    Updated: 2024/01/07 22:28:01 by lucperei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME			= libft.a
 
-FLAGS = -Wall -Wextra -Werror -I./ -c
+FLAGS			= -Wall -Wextra -Werror -g3
+CFLAGS			= -I ./
 
-# Vou incluir e atualizar lista de funções conforme for necessitando da utilização para não ficar pesado
+CC				= cc
+AR 				= ar -rcs
+RM_F			= -rm -f
+RM_RF			= rm -rf
 
-SRC = ft_putchar_fd.c ft_putendl_fd.c ft_putstr_fd.c \
-# SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_split.c ft_strncpy.c \
-# ft_calloc.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_itoa.c ft_strcpy.c \
-# ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_toupper.c ft_strcat.c \
-# ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_isspace.c \
-# ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c get_next_line.c \
-# ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c get_next_line_utils.c\
+HEADER_LIBFT	= libft.h
 
-OBJS = $(SRC:.c=.o)
+SRC				= 	ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_substr.c \
+					ft_atoi.c ft_bzero.c ft_calloc.c ft_isdigit.c ft_strjoin.c \
+					ft_memset.c ft_putchar_fd.c ft_putendl_fd.c ft_strlen.c \
+					get_next_line.c	get_next_line_utils.c ft_putnbr_fd.c \
+					ft_strncmp.c ft_strcmp.c ft_strrchr.c ft_strtrim.c \
 
-RM = rm -f
+OBJ_PATH		= obj
+OBJ 			= $(SRC:%.c=$(OBJ_PATH)/%.o)
 
-AR = ar rc
+all: $(OBJ_PATH) $(NAME)
 
-CC = cc
+$(OBJ_PATH):
+		@mkdir -p $(OBJ_PATH)
 
-$(NAME): $(OBJS) libft.h
-		$(CC) $(FLAGS) $(SRC)
-		$(AR) $(NAME) $(OBJS)
+$(OBJ_PATH)/%.o: src/%.c $(HEADER_LIBFT)
+		@$(CC) $(FLAGS) -c $< -o $@ $(CFLAGS)
 
-all: $(NAME)
+$(NAME): $(OBJ)
+		@$(AR) $(NAME) $(OBJ)
 
-clean: 
-		$(RM) $(OBJS)
-		
+clean:
+		@$(RM_F) $(OBJ)
+
 fclean: clean
-		$(RM) $(NAME)
+		@$(RM_F) $(NAME) $(RM_RF) $(OBJ_PATH)
 
-re: fclean all
+re:		fclean all
+
+.PHONY: all clean fclean re
