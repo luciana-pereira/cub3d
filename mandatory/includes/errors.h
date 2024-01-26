@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:01:28 by luizedua          #+#    #+#             */
-/*   Updated: 2024/01/23 13:12:43 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/26 05:55:09 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define INVALID_TEX "Invalid texture file"
 # define INVALID_PATH "Invalid provided path"
 # define INVALID_ELEMENT "Invalid inserted element\n"
+# define INVALID_RGB_COLOR "Invalid RGB color"
 # define NO_MAP "There is no map in the file"
 # define EMPTY_FILE "File is empty"
 # define EXIT_THE_GAME "Exiting the game successfully\n"
