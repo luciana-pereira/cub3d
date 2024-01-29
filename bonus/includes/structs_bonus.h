@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/25 13:03:45 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/26 05:46:17 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,13 @@ typedef struct s_image
 	int		size_line;
 	int		endian;
 }				t_image;
+
+typedef struct s_draw_params
+{
+	t_image	*image;
+	int		color;
+	int		is_horizontal;
+}			t_draw_params;
 
 typedef struct s_map
 {

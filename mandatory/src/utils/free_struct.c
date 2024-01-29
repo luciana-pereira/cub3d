@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 17:47:11 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/19 10:55:22 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/26 04:18:29 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	free_game(t_game *game)
 int	close_win(t_game *game)
 {
 	free_game(game);
-	write(1, EXIT_THE_GAME, sizeof(EXIT_THE_GAME) - 1);
 	exit(0);
 	return (0);
 }

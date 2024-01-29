@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:00:31 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/25 14:26:28 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/26 05:54:36 by lucperei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	is_valid_color(int red, int green, int blue)
 {
 	if ((red < 0 || red > 255) || (blue < 0 || blue > 255)
 		|| (green < 0 || green > 255))
-		return (print_error("Invalid RGB color"));
+		return (print_error(INVALID_RGB_COLOR));
 	return (0);
 }
 
