@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 17:03:06 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:15:16 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ int	mouse_hook(int x, int y, void *g)
 	if (game->mouse)
 		return (0);
 	if (x > WIN_W / 2)
-		game->player->angle += TURN_SPEED / 3;
+		game->player->angle += TURN_SPEED * 0.3;
 	else if (x < WIN_W / 2)
-		game->player->angle += -1 * TURN_SPEED / 3;
+		game->player->angle += -1 * TURN_SPEED * 0.3;
 	game->player->angle = fix_ang(game->player->angle);
 	mlx_mouse_move(game->p_mlx, game->p_win, WIN_W / 2, WIN_H / 2);
 	return (0);
