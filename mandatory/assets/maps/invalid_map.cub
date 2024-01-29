@@ -3,10 +3,13 @@ SO ./mandatory/assets/textures/south.xpm
 WE ./mandatory/assets/textures/west.xpm
 EA ./mandatory/assets/textures/east.xpm
 
-F 64,64,64,0
-C 128,128,128,0
+F 64,64,64
+C 128,128,128
 
 
 11111111111
+1000000000
+10000000001
+10000000001
 10000000001
 11111111111
