@@ -4,8 +4,6 @@ NAME_BONUS	= cub3D_bonus
 LIBFT_PATH	= ./lib/libft
 LIBFT		= $(LIBFT_PATH)/libft.a
 
-# MLX_PATH	= ./lib/minilibx-linux
-# MLX			= $(MLX_PATH)/libmlx.a
 MLX			= -lmlx
 
 INCLUDE =	-I ../../include -I $(LIBFT_PATH)
@@ -124,7 +122,7 @@ HEADER_FILES_BONUS	=	bonus/includes/cub3d_bonus.h	\
 						bonus/includes/errors_bonus.h	\
 						bonus/includes/functions_bonus.h\
 
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS = -Wall -Werror -Wextra -o3
 MLXFLAGS = -lm -lXext -lX11
 
 all: $(OBJ_DIR) $(NAME)

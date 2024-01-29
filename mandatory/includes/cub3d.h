@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucperei <lucperei@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/26 04:07:21 by lucperei         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:10:13 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 # include <stdbool.h>
 # include <X11/keysym.h>
 # include "../../lib/libft/libft.h"
-// # include "../../lib/minilibx-linux/mlx_int.h"
 
 # include "colors.h"
 # include "constants.h"

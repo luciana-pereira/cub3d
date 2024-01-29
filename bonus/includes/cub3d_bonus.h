@@ -6,7 +6,7 @@
 /*   By: luizedua <luizedua@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:37:50 by lucperei          #+#    #+#             */
-/*   Updated: 2024/01/18 12:06:09 by luizedua         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:10:05 by luizedua         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 # include <X11/keysym.h>
 # include <X11/X.h>
 # include "../../lib/libft/libft.h"
-// # include "../../lib/minilibx-linux/mlx_int.h"
 
 # include "colors_bonus.h"
 # include "constants_bonus.h"
