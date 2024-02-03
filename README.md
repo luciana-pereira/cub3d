@@ -1,3 +1,5 @@
+<a href="./README.md" target="_blank">Potuguês **🇧🇷**</a> | <a href="./README_en.md" target="_blank">English **🇺🇸**</a>
+
 # cub3d 👾​
 
 `CURSO: Engenharia de Software | 42SP`
