@@ -17,6 +17,12 @@ Este projeto consiste em um gráfico 3D “realista” que contem a representaç
  
 O game foi criado usando a _**técnica de Ray-Casting**_, que simula a visão de uma câmera 3D em uma projeção 2D, envolve cálculos trigonométricos e vetoriais. Além da _**técnica de Scanline**_ usada para renderizar polígonos em gráficos 2D. Ele percorre as linhas horizontais da tela e preenche os pixels entre as arestas do polígono, determinando quais pixels devem ser coloridos e a utilização do _**Algoritmo de Bresenham**_ para desenhar linhas em uma grade de pixels. 
 
+<div align="center">
+  <img src="./ezgif.com-speed.gif.png" alt="Game Cub3D"/>
+</div>
+
+
+
 ## 2. Planejamento Ágil
 Utilizou-se o kaban do GitHub na aba [Projects](https://github.com/users/luciana-pereira/projects/12) e o Discord para planejar as ideais, organizar as tarefas e facilitar a comunicação durante o desenvolvimento.
 
